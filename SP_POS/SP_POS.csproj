@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Excel.cs" />
+    <Compile Include="Classes\Pdf.cs" />
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\Sql.cs" />
     <Compile Include="Controls\ProductCard.cs">
@@ -72,11 +74,23 @@
     <Compile Include="Pages\MemberPage\Member.Designer.cs">
       <DependentUpon>Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PosPage\Pos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\PosPage\Pos.Designer.cs">
+      <DependentUpon>Pos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProductPage\Products.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Pages\ProductPage\Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportPage\Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\ReportPage\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,8 +106,14 @@
     <EmbeddedResource Include="Pages\MemberPage\Member.resx">
       <DependentUpon>Member.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PosPage\Pos.resx">
+      <DependentUpon>Pos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProductPage\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ReportPage\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

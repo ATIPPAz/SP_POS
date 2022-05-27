@@ -44,6 +44,8 @@ namespace SP_POS
 
         private void ReportBtn_Click(object sender, EventArgs e)
         {
+            Route.OpenReportPage(DisplayPanel);
+
             ReportBtn.BackColor = Color.FromArgb(222, 222, 222);
             ProductBtn.BackColor = Color.FromArgb(248, 248, 249);
             PosBtn.BackColor = Color.FromArgb(248, 248, 249);
@@ -52,6 +54,7 @@ namespace SP_POS
 
         private void PosBtn_Click(object sender, EventArgs e)
         {
+            Route.OpenPosPage(DisplayPanel);
             PosBtn.BackColor = Color.FromArgb(222, 222, 222);
             ProductBtn.BackColor = Color.FromArgb(248, 248, 249);
             ReportBtn.BackColor = Color.FromArgb(248, 248, 249);
