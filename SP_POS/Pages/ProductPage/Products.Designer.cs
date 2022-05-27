@@ -53,18 +53,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchBartxt = new System.Windows.Forms.TextBox();
             this.DatagridviewProduct = new System.Windows.Forms.DataGridView();
-            this.txtProdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbProdBrand = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbProdType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbProdStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.txtProdImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAnnotation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbProdStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cbProdType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cbProdBrand = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.txtProdPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridviewProduct)).BeginInit();
             this.SuspendLayout();
@@ -317,25 +317,53 @@
             this.DatagridviewProduct.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridviewProduct_CellValueChanged);
             this.DatagridviewProduct.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.DatagridviewProduct_UserDeletingRow);
             // 
-            // txtProdID
+            // txtAnnotation
             // 
-            this.txtProdID.DataPropertyName = "ProdID";
-            this.txtProdID.HeaderText = "ID";
-            this.txtProdID.Name = "txtProdID";
-            this.txtProdID.Visible = false;
+            this.txtAnnotation.DataPropertyName = "Annotation";
+            this.txtAnnotation.HeaderText = "Annotation";
+            this.txtAnnotation.Name = "txtAnnotation";
             // 
-            // txtProdDetailID
+            // txtProdImage
             // 
-            this.txtProdDetailID.DataPropertyName = "ProdDetailID";
-            this.txtProdDetailID.HeaderText = "ProdDetailID";
-            this.txtProdDetailID.Name = "txtProdDetailID";
-            this.txtProdDetailID.Visible = false;
+            this.txtProdImage.DataPropertyName = "ProdImage";
+            this.txtProdImage.HeaderText = "ImageUrl";
+            this.txtProdImage.Name = "txtProdImage";
             // 
-            // txtProdName
+            // cbProdStatus
             // 
-            this.txtProdName.DataPropertyName = "ProdName";
-            this.txtProdName.HeaderText = "ProductName";
-            this.txtProdName.Name = "txtProdName";
+            this.cbProdStatus.DataPropertyName = "ProdStatus";
+            this.cbProdStatus.HeaderText = "Status";
+            this.cbProdStatus.Name = "cbProdStatus";
+            // 
+            // cbProdType
+            // 
+            this.cbProdType.DataPropertyName = "ProdType";
+            this.cbProdType.HeaderText = "Type";
+            this.cbProdType.Name = "cbProdType";
+            // 
+            // cbProdBrand
+            // 
+            this.cbProdBrand.DataPropertyName = "ProdBrand";
+            this.cbProdBrand.HeaderText = "Brand";
+            this.cbProdBrand.Name = "cbProdBrand";
+            // 
+            // txtProdPrice
+            // 
+            this.txtProdPrice.DataPropertyName = "ProdPrice";
+            this.txtProdPrice.HeaderText = "Price";
+            this.txtProdPrice.Name = "txtProdPrice";
+            // 
+            // txtProdCost
+            // 
+            this.txtProdCost.DataPropertyName = "ProdCost";
+            this.txtProdCost.HeaderText = "Cost";
+            this.txtProdCost.Name = "txtProdCost";
+            // 
+            // txtProdQty
+            // 
+            this.txtProdQty.DataPropertyName = "ProdQty";
+            this.txtProdQty.HeaderText = "Qty";
+            this.txtProdQty.Name = "txtProdQty";
             // 
             // txtProdDest
             // 
@@ -344,53 +372,25 @@
             this.txtProdDest.HeaderText = "Description";
             this.txtProdDest.Name = "txtProdDest";
             // 
-            // txtProdQty
+            // txtProdName
             // 
-            this.txtProdQty.DataPropertyName = "ProdQty";
-            this.txtProdQty.HeaderText = "Qty";
-            this.txtProdQty.Name = "txtProdQty";
+            this.txtProdName.DataPropertyName = "ProdName";
+            this.txtProdName.HeaderText = "ProductName";
+            this.txtProdName.Name = "txtProdName";
             // 
-            // txtProdCost
+            // txtProdDetailID
             // 
-            this.txtProdCost.DataPropertyName = "ProdCost";
-            this.txtProdCost.HeaderText = "Cost";
-            this.txtProdCost.Name = "txtProdCost";
+            this.txtProdDetailID.DataPropertyName = "ProdDetailID";
+            this.txtProdDetailID.HeaderText = "ProdDetailID";
+            this.txtProdDetailID.Name = "txtProdDetailID";
+            this.txtProdDetailID.Visible = false;
             // 
-            // txtProdPrice
+            // txtProdID
             // 
-            this.txtProdPrice.DataPropertyName = "ProdPrice";
-            this.txtProdPrice.HeaderText = "Price";
-            this.txtProdPrice.Name = "txtProdPrice";
-            // 
-            // cbProdBrand
-            // 
-            this.cbProdBrand.DataPropertyName = "ProdBrand";
-            this.cbProdBrand.HeaderText = "Brand";
-            this.cbProdBrand.Name = "cbProdBrand";
-            // 
-            // cbProdType
-            // 
-            this.cbProdType.DataPropertyName = "ProdType";
-            this.cbProdType.HeaderText = "Type";
-            this.cbProdType.Name = "cbProdType";
-            // 
-            // cbProdStatus
-            // 
-            this.cbProdStatus.DataPropertyName = "ProdStatus";
-            this.cbProdStatus.HeaderText = "Status";
-            this.cbProdStatus.Name = "cbProdStatus";
-            // 
-            // txtProdImage
-            // 
-            this.txtProdImage.DataPropertyName = "ProdImage";
-            this.txtProdImage.HeaderText = "ImageUrl";
-            this.txtProdImage.Name = "txtProdImage";
-            // 
-            // txtAnnotation
-            // 
-            this.txtAnnotation.DataPropertyName = "Annotation";
-            this.txtAnnotation.HeaderText = "Annotation";
-            this.txtAnnotation.Name = "txtAnnotation";
+            this.txtProdID.DataPropertyName = "ProdID";
+            this.txtProdID.HeaderText = "ID";
+            this.txtProdID.Name = "txtProdID";
+            this.txtProdID.Visible = false;
             // 
             // Products
             // 
@@ -410,18 +410,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DatagridviewProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdDetailID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdDest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdPrice;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdBrand;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdType;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdImage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtAnnotation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SearchBartxt;
         private System.Windows.Forms.Button AddProduct;
@@ -445,5 +433,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdDetailID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdDest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdPrice;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdBrand;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdType;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdImage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtAnnotation;
     }
 }

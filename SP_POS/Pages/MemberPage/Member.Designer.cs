@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbProdStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.comboStatus = new System.Windows.Forms.ComboBox();
             this.comboType = new System.Windows.Forms.ComboBox();
             this.comboBrand = new System.Windows.Forms.ComboBox();
@@ -36,44 +35,39 @@
             this.textCost = new System.Windows.Forms.TextBox();
             this.textQty = new System.Windows.Forms.TextBox();
             this.textAnno = new System.Windows.Forms.TextBox();
-            this.cbProdBrand = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.txtProdPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textImage = new System.Windows.Forms.TextBox();
             this.textDes = new System.Windows.Forms.TextBox();
             this.textName = new System.Windows.Forms.TextBox();
-            this.cbProdType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtProdDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtAnnotation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtProdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AddProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SearchBartxt = new System.Windows.Forms.TextBox();
-            this.dvgMember = new System.Windows.Forms.DataGridView();
-            this.txtProdDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtProdImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMember = new System.Windows.Forms.DataGridView();
+            this.CustID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prefix = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgMember)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cbProdStatus
-            // 
-            this.cbProdStatus.DataPropertyName = "ProdStatus";
-            this.cbProdStatus.HeaderText = "Status";
-            this.cbProdStatus.Name = "cbProdStatus";
             // 
             // comboStatus
             // 
@@ -128,30 +122,6 @@
             this.textAnno.Size = new System.Drawing.Size(114, 20);
             this.textAnno.TabIndex = 5;
             // 
-            // cbProdBrand
-            // 
-            this.cbProdBrand.DataPropertyName = "ProdBrand";
-            this.cbProdBrand.HeaderText = "Brand";
-            this.cbProdBrand.Name = "cbProdBrand";
-            // 
-            // txtProdPrice
-            // 
-            this.txtProdPrice.DataPropertyName = "ProdPrice";
-            this.txtProdPrice.HeaderText = "Price";
-            this.txtProdPrice.Name = "txtProdPrice";
-            // 
-            // txtProdCost
-            // 
-            this.txtProdCost.DataPropertyName = "ProdCost";
-            this.txtProdCost.HeaderText = "Cost";
-            this.txtProdCost.Name = "txtProdCost";
-            // 
-            // txtProdQty
-            // 
-            this.txtProdQty.DataPropertyName = "ProdQty";
-            this.txtProdQty.HeaderText = "Qty";
-            this.txtProdQty.Name = "txtProdQty";
-            // 
             // textImage
             // 
             this.textImage.Location = new System.Drawing.Point(964, 552);
@@ -173,12 +143,6 @@
             this.textName.Size = new System.Drawing.Size(100, 20);
             this.textName.TabIndex = 5;
             // 
-            // cbProdType
-            // 
-            this.cbProdType.DataPropertyName = "ProdType";
-            this.cbProdType.HeaderText = "Type";
-            this.cbProdType.Name = "cbProdType";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -187,12 +151,6 @@
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 4;
             this.label11.Text = "Annotation";
-            // 
-            // txtProdName
-            // 
-            this.txtProdName.DataPropertyName = "ProdName";
-            this.txtProdName.HeaderText = "ProductName";
-            this.txtProdName.Name = "txtProdName";
             // 
             // label10
             // 
@@ -239,13 +197,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Price";
             // 
-            // txtProdDest
-            // 
-            this.txtProdDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtProdDest.DataPropertyName = "ProdDest";
-            this.txtProdDest.HeaderText = "Description";
-            this.txtProdDest.Name = "txtProdDest";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -255,12 +206,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Cost";
             // 
-            // txtAnnotation
-            // 
-            this.txtAnnotation.DataPropertyName = "Annotation";
-            this.txtAnnotation.HeaderText = "Annotation";
-            this.txtAnnotation.Name = "txtAnnotation";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -269,13 +214,6 @@
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Qty";
-            // 
-            // txtProdID
-            // 
-            this.txtProdID.DataPropertyName = "ProdID";
-            this.txtProdID.HeaderText = "ID";
-            this.txtProdID.Name = "txtProdID";
-            this.txtProdID.Visible = false;
             // 
             // panel1
             // 
@@ -302,7 +240,7 @@
             this.panel1.Controls.Add(this.AddProduct);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.SearchBartxt);
-            this.panel1.Controls.Add(this.dvgMember);
+            this.panel1.Controls.Add(this.dgvMember);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 620);
@@ -334,6 +272,7 @@
             this.AddProduct.TabIndex = 3;
             this.AddProduct.Text = "AddProduct";
             this.AddProduct.UseVisualStyleBackColor = true;
+            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
             // 
             // label1
             // 
@@ -353,40 +292,103 @@
             this.SearchBartxt.Size = new System.Drawing.Size(1069, 35);
             this.SearchBartxt.TabIndex = 1;
             // 
-            // dvgMember
+            // dgvMember
             // 
-            this.dvgMember.AllowUserToAddRows = false;
-            this.dvgMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txtProdID,
-            this.txtProdDetailID,
-            this.txtProdName,
-            this.txtProdDest,
-            this.txtProdQty,
-            this.txtProdCost,
-            this.txtProdPrice,
-            this.cbProdBrand,
-            this.cbProdType,
-            this.cbProdStatus,
-            this.txtProdImage,
-            this.txtAnnotation});
-            this.dvgMember.Location = new System.Drawing.Point(25, 109);
-            this.dvgMember.Name = "dvgMember";
-            this.dvgMember.Size = new System.Drawing.Size(1159, 416);
-            this.dvgMember.TabIndex = 0;
+            this.dgvMember.AllowUserToAddRows = false;
+            this.dgvMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustID,
+            this.Prefix,
+            this.Gender,
+            this.Fname,
+            this.LName,
+            this.Username,
+            this.Status,
+            this.Birthday,
+            this.Phone,
+            this.Mail,
+            this.Address,
+            this.Column1});
+            this.dgvMember.Location = new System.Drawing.Point(16, 116);
+            this.dgvMember.Name = "dgvMember";
+            this.dgvMember.Size = new System.Drawing.Size(1168, 416);
+            this.dgvMember.TabIndex = 0;
+            this.dgvMember.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvMember_UserDeletingRow);
             // 
-            // txtProdDetailID
+            // CustID
             // 
-            this.txtProdDetailID.DataPropertyName = "ProdDetailID";
-            this.txtProdDetailID.HeaderText = "ProdDetailID";
-            this.txtProdDetailID.Name = "txtProdDetailID";
-            this.txtProdDetailID.Visible = false;
+            this.CustID.DataPropertyName = "CustID";
+            this.CustID.HeaderText = "ID";
+            this.CustID.Name = "CustID";
+            this.CustID.Visible = false;
             // 
-            // txtProdImage
+            // Prefix
             // 
-            this.txtProdImage.DataPropertyName = "ProdImage";
-            this.txtProdImage.HeaderText = "ImageUrl";
-            this.txtProdImage.Name = "txtProdImage";
+            this.Prefix.DataPropertyName = "CustPrefix";
+            this.Prefix.HeaderText = "Prefix";
+            this.Prefix.Name = "Prefix";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "CustGender";
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // Fname
+            // 
+            this.Fname.DataPropertyName = "CustFname";
+            this.Fname.HeaderText = "FirstName";
+            this.Fname.Name = "Fname";
+            // 
+            // LName
+            // 
+            this.LName.DataPropertyName = "CustLname";
+            this.LName.HeaderText = "LastName";
+            this.LName.Name = "LName";
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "CustUsername";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Custstatus";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // Birthday
+            // 
+            this.Birthday.DataPropertyName = "CustBirth";
+            this.Birthday.HeaderText = "Birthday";
+            this.Birthday.Name = "Birthday";
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "CustPhone";
+            this.Phone.HeaderText = "talPhone";
+            this.Phone.Name = "Phone";
+            // 
+            // Mail
+            // 
+            this.Mail.DataPropertyName = "CustMail";
+            this.Mail.HeaderText = "Mail";
+            this.Mail.Name = "Mail";
+            // 
+            // Address
+            // 
+            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Address.DataPropertyName = "CustAddress";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CustAccID";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
             // 
             // Member
             // 
@@ -397,14 +399,12 @@
             this.Size = new System.Drawing.Size(1200, 620);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgMember)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMember)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdStatus;
         private System.Windows.Forms.ComboBox comboStatus;
         private System.Windows.Forms.ComboBox comboType;
         private System.Windows.Forms.ComboBox comboBrand;
@@ -412,34 +412,35 @@
         private System.Windows.Forms.TextBox textCost;
         private System.Windows.Forms.TextBox textQty;
         private System.Windows.Forms.TextBox textAnno;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdBrand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdQty;
         private System.Windows.Forms.TextBox textImage;
         private System.Windows.Forms.TextBox textDes;
         private System.Windows.Forms.TextBox textName;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbProdType;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdDest;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtAnnotation;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdID;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button AddProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SearchBartxt;
-        private System.Windows.Forms.DataGridView dvgMember;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdDetailID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtProdImage;
+        private System.Windows.Forms.DataGridView dgvMember;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustID;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Prefix;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
