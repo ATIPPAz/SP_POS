@@ -74,17 +74,6 @@ namespace SP_POS.Pages.ProductPage
                     Sql sql = new Sql();
                     string[] column;
                     object[] value;
-                    Console.WriteLine(dgv.Cells["cbProdBrand"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtProdName"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtProdPrice"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtProdDest"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtProdCost"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtProdQty"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["cbProdStatus"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["cbProdType"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtAnnotation"].Value.ToString());
-                    Console.WriteLine(dgv.Cells["txtProdImage"].Value.ToString());
-
                     if (dgv.Cells["txtProdID"].Value != DBNull.Value)
                     {
                         if (MessageBox.Show("กรุณากดยืนยันเพื่อแก้ไขข้อมูล", "ต้องการแก้ไขหรือไม่", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -158,115 +147,15 @@ namespace SP_POS.Pages.ProductPage
       }
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-      System.Diagnostics.Process.Start(@"C:\Users\nasak\AppData\Local\Discord\app-1.0.9004\Discord.exe");
-    }
+   
 
-        private void DatagridviewProduct_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-        }
-        private void AllowNumberOnly(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+      
+        
 
-        private void DatagridviewProduct_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            /*try
-            {
-                if (e.KeyChar == (char)13)
-                {
-                    string[] column;
-                    Sql sql = new Sql();
-                    object[] value;
-                    DataGridViewRow dgv = DatagridviewProduct.CurrentRow;
-                    if (dgv.Cells["txtProdID"].Value == DBNull.Value)
-                    {
-                        if (MessageBox.Show("กรุณากดยืนยันเพื่อเพิ่มข้อมูล", "ต้องการเพิ่มข้อมูลหรือไม่?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                        {
-                            column = new string[]{
-                        "@ProdName",
-                        "@ProdPrice",
-                        "@ProdDest",
-                        "@ProdQty",
-                        "@ProdImage" ,
-                        "@ProdCost" ,
-                        "@BrandID" ,
-                        "@ProdStatusID" ,
-                        "@TypeID" ,
-                        "@Annotation"
-                    };
-                            value = new object[]{
-                   (dgv.Cells["txtProdName"].Value == DBNull.Value)?"" :dgv.Cells["txtProdName"].Value.ToString(),
-                        Convert.ToInt32(dgv.Cells["txtProdPrice"].Value),
-                        dgv.Cells["txtProdDest"].Value.ToString(),
-                        Convert.ToInt32(dgv.Cells["txtProdQty"].Value),
-                        dgv.Cells["txtProdImage"].Value.ToString(),
-                        Convert.ToInt32(dgv.Cells["txtProdCost"].Value),
-                        dgv.Cells["cbProdBrand"].Value.ToString(),
-                        dgv.Cells["cbProdStatus"].Value.ToString(),
-                        dgv.Cells["cbProdType"].Value.ToString(),
-                        dgv.Cells["txtAnnotation"].Value.ToString(),
-                    };
-                            sql.Insert("ProductInsert", column, value);
-                        }
-                    }
-                    else
-                    {
-                        if (MessageBox.Show("กรุณากดยืนยันเพื่อแก้ไขข้อมูล", "ต้องการแก้ไขหรือไม่", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                        {
-                            Console.WriteLine(dgv.Cells["txtProdID"].Value.ToString());
-                            column = new string[]{
-                        "@ProdID",
-                        "@ProdName",
-                        "@ProdPrice",
-                        "@ProdDest",
-                        "@ProdQty",
-                        "@ProdDetailID" ,
-                        "@ProdImage" ,
-                        "@ProdCost" ,
-                        "@BrandID" ,
-                        "@ProdStatusID" ,
-                        "@TypeID" ,
-                        "@Annotation"
-                    };
-                            value = new object[]{
-                        dgv.Cells["txtProdID"].Value.ToString(),
-                        dgv.Cells["txtProdName"].Value.ToString(),
-                        Convert.ToInt32(dgv.Cells["txtProdPrice"].Value),
-                        dgv.Cells["txtProdDest"].Value.ToString(),
-                        Convert.ToInt32(dgv.Cells["txtProdQty"].Value),
-                        dgv.Cells["txtProdDetailID"].Value.ToString(),
-                        dgv.Cells["txtProdImage"].Value.ToString(),
-                        Convert.ToInt32(dgv.Cells["txtProdCost"].Value),
-                        dgv.Cells["cbProdBrand"].Value.ToString(),
-                        dgv.Cells["cbProdStatus"].Value.ToString(),
-                        dgv.Cells["cbProdType"].Value.ToString(),
-                        dgv.Cells["txtAnnotation"].Value.ToString(),
-                    };
-                            sql.Update("ProductEdit", column, value);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("กรุณาตรวจสอบค่าที่กรอกเข้ามาอีกครั้ง", "ข้อมูลที่กรอกผิดรูปแบบ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Addtable();
-            }
-            */
-        }
 
         private void AddProduct_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dgv = DatagridviewProduct.CurrentRow;
+           
             Sql sql = new Sql();
             string[] column;
             object[] value;
@@ -315,6 +204,24 @@ namespace SP_POS.Pages.ProductPage
             }
         }
 
-       
+        private void DatagridviewProduct_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            try
+            {
+                if (DatagridviewProduct.CurrentRow.Cells["txtProdID"].Value != DBNull.Value)
+                {
+                    if (MessageBox.Show("กรุณากดยืนยินเพื่อลบข้อมูล", "ต้องการลบหรือไม่", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        Sql delete = new Sql();
+                        string id = DatagridviewProduct.CurrentRow.Cells["txtProdID"].Value.ToString();
+                        delete.Delete("ProductDelete", "@ProdID", id);
+                    }
+                }
+            }
+          catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

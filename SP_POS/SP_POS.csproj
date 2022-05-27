@@ -89,6 +89,9 @@
     <EmbeddedResource Include="Pages\LoginPage\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MemberPage\Member.resx">
+      <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProductPage\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>

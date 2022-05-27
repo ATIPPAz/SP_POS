@@ -44,10 +44,19 @@ namespace SP_POS.Classes
                 }
             }
         }
-        void Delete(string cmd)
+        public void Delete(string cmd, string column, object columnvalue)
         {
-            Console.WriteLine(cmd);
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                con.Open();
+                using (SqlCommand sqlcmd = new SqlCommand(cmd, con))
+                {
+                    sqlcmd.CommandType = CommandType.StoredProcedure;
+                    sqlcmd.Parameters.AddWithValue(column, columnvalue);
+                    sqlcmd.ExecuteNonQuery();
+                }
 
+            }
         }
         public void Insert(string cmd,string[] column,object[] columnvalue)
         {
