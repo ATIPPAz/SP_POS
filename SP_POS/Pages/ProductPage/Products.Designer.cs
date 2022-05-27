@@ -278,7 +278,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 60);
+            this.label1.Location = new System.Drawing.Point(20, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 29);
             this.label1.TabIndex = 2;
@@ -287,7 +287,7 @@
             // SearchBartxt
             // 
             this.SearchBartxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBartxt.Location = new System.Drawing.Point(115, 60);
+            this.SearchBartxt.Location = new System.Drawing.Point(115, 17);
             this.SearchBartxt.Name = "SearchBartxt";
             this.SearchBartxt.Size = new System.Drawing.Size(1069, 35);
             this.SearchBartxt.TabIndex = 1;
@@ -310,9 +310,9 @@
             this.cbProdStatus,
             this.txtProdImage,
             this.txtAnnotation});
-            this.DatagridviewProduct.Location = new System.Drawing.Point(25, 109);
+            this.DatagridviewProduct.Location = new System.Drawing.Point(12, 58);
             this.DatagridviewProduct.Name = "DatagridviewProduct";
-            this.DatagridviewProduct.Size = new System.Drawing.Size(1159, 416);
+            this.DatagridviewProduct.Size = new System.Drawing.Size(1172, 474);
             this.DatagridviewProduct.TabIndex = 0;
             this.DatagridviewProduct.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridviewProduct_CellValueChanged);
             this.DatagridviewProduct.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.DatagridviewProduct_UserDeletingRow);

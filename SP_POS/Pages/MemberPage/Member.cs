@@ -27,9 +27,9 @@ namespace SP_POS.Pages.MemberPage
         {
             Sql sql = new Sql();
             var data = sql.Select("Select StatusID,StatusName from [dbo].[Status]");
-           /* comboType.ValueMember = "StatusID";
-            comboType.DisplayMember = "StatusName";
-            comboType.DataSource = data;*/
+            comboStatus.ValueMember = "StatusID";
+            comboStatus.DisplayMember = "StatusName";
+            comboStatus.DataSource = data;
             Status.ValueMember = "StatusID";
             Status.DisplayMember = "StatusName";
             Status.DataSource = data;
@@ -49,6 +49,7 @@ namespace SP_POS.Pages.MemberPage
             string[] prefix = new string[] {"นาย   ","นางสาว","นาง   " };
             foreach (var item in prefix)
             {
+                comboPrefix.Items.Add(item);
                 Prefix.Items.Add(item);
             }
         }
@@ -65,8 +66,9 @@ namespace SP_POS.Pages.MemberPage
     new { Text = "ชาย", Value = "M " },
     new { Text = "หญิง", Value = "FM" },
 
-};
-
+}; comboGender.ValueMember = "Value";
+            comboGender.DisplayMember = "Text";
+            comboGender.DataSource = items;
             Gender.DataSource = items;
         }
 
@@ -77,7 +79,40 @@ namespace SP_POS.Pages.MemberPage
 
         private void dgvMember_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
+            try
+            {
+                if (dgvMember.CurrentRow.Cells["CustID"].Value != DBNull.Value)
+                {
+                    if (MessageBox.Show("กรุณากดยืนยินเพื่อลบข้อมูล", "ต้องการลบหรือไม่", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        Sql delete = new Sql();
+                        string id = dgvMember.CurrentRow.Cells["CustID"].Value.ToString();
+                        delete.Delete("MemberDelete", "@CustID", id);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
+        private void SearchBartxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (!String.IsNullOrEmpty(SearchBartxt.Text))
+                {
+                    DataView dv = dt.DefaultView;
+                    dv.RowFilter = String.Format("CustFname like '%{0}%'", SearchBartxt.Text);
+                    dgvMember.DataSource = dv.ToTable();
+                }
+                else
+                {
+                    Addtable();
+                }
+
+            }
         }
     }
     class comboboxvalue
