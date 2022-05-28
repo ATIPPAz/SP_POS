@@ -52,6 +52,7 @@
             // 
             // ProdName
             // 
+            this.ProdName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ProdName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProdName.Location = new System.Drawing.Point(0, 0);
             this.ProdName.Name = "ProdName";
@@ -68,12 +69,12 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(150, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 30);
+            this.panel2.Size = new System.Drawing.Size(150, 30);
             this.panel2.TabIndex = 1;
             // 
             // AddPanel
             // 
-            this.AddPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.AddPanel.BackColor = System.Drawing.Color.Transparent;
             this.AddPanel.Location = new System.Drawing.Point(114, 3);
             this.AddPanel.Name = "AddPanel";
             this.AddPanel.Size = new System.Drawing.Size(20, 20);
@@ -88,10 +89,11 @@
             // 
             // Qty
             // 
+            this.Qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Qty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Qty.Location = new System.Drawing.Point(0, 0);
             this.Qty.Name = "Qty";
-            this.Qty.Size = new System.Drawing.Size(140, 30);
+            this.Qty.Size = new System.Drawing.Size(150, 30);
             this.Qty.TabIndex = 0;
             this.Qty.Text = "label2";
             this.Qty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,13 +102,14 @@
             // 
             this.panel3.Controls.Add(this.Price);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(290, 0);
+            this.panel3.Location = new System.Drawing.Point(300, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(110, 30);
             this.panel3.TabIndex = 2;
             // 
             // Price
             // 
+            this.Price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Price.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Price.Location = new System.Drawing.Point(0, 0);
             this.Price.Name = "Price";

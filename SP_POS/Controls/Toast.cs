@@ -29,7 +29,7 @@ namespace SP_POS.Controls
         {
             this.BackColor = Color.SeaGreen;
             this.LabelAlert.Text = String.IsNullOrEmpty(message) ? "Success" : message;
-
+            PictureAlert.Image = Properties.Resources.Success;
             TimerAlert.Start();
         }
         public static void Info(string message = "")
@@ -56,6 +56,8 @@ namespace SP_POS.Controls
         }
         private void error(string message = "")
         {
+            PictureAlert.Image = Properties.Resources.wrong;
+            PictureAlert.SizeMode = PictureBoxSizeMode.Zoom;
             this.BackColor = Color.FromArgb(204, 0, 0);
             this.LabelAlert.Text = String.IsNullOrEmpty(message) ? "Error" : message;
             TimerAlert.Start();

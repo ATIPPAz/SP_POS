@@ -17,6 +17,7 @@ namespace SP_POS.Pages.PosPage
         DataTable dt = new DataTable();
         List<Body> OrderlistDetail = new List<Body>();
         List<ProductCard> productCard = new List<ProductCard>();
+        int Totalpay = 0;
         public Pos()
         {
             InitializeComponent(); getProduct(); setcardt();
@@ -122,6 +123,7 @@ namespace SP_POS.Pages.PosPage
             int total = 0;
             OrderlistDetail.ForEach(x => { total+= Convert.ToInt32(x.getProduct().ProdPrice) * Convert.ToInt32(x.getProduct().ProdQty); });
             Total.Text = total.ToString()+" บาท";
+            Totalpay = total;
         }
         private void ClearBtn_Click(object sender, EventArgs e)
         {
@@ -137,6 +139,8 @@ namespace SP_POS.Pages.PosPage
             if (OrderlistDetail.Count != 0)
             {
                 Route.OpenPayment(Route.index.DisplayPanel);
+                Route.PaymentPage.GetData(OrderlistDetail, Totalpay);
+
             }
         }
     }

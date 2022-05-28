@@ -29,25 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Toast));
-            this.PictureAlert = new System.Windows.Forms.PictureBox();
             this.LabelAlert = new System.Windows.Forms.Label();
             this.TimerAlert = new System.Windows.Forms.Timer(this.components);
             this.TimerAnimated = new System.Windows.Forms.Timer(this.components);
             this.TimerClose = new System.Windows.Forms.Timer(this.components);
+            this.PictureAlert = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureAlert)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PictureAlert
-            // 
-            this.PictureAlert.ErrorImage = null;
-            this.PictureAlert.Image = ((System.Drawing.Image)(resources.GetObject("PictureAlert.Image")));
-            this.PictureAlert.Location = new System.Drawing.Point(12, 12);
-            this.PictureAlert.Name = "PictureAlert";
-            this.PictureAlert.Size = new System.Drawing.Size(65, 65);
-            this.PictureAlert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PictureAlert.TabIndex = 0;
-            this.PictureAlert.TabStop = false;
             // 
             // LabelAlert
             // 
@@ -73,6 +61,17 @@
             // 
             this.TimerClose.Interval = 10;
             this.TimerClose.Tick += new System.EventHandler(this.TimerClose_Tick);
+            // 
+            // PictureAlert
+            // 
+            this.PictureAlert.ErrorImage = null;
+            this.PictureAlert.Image = global::SP_POS.Properties.Resources.Success;
+            this.PictureAlert.Location = new System.Drawing.Point(12, 12);
+            this.PictureAlert.Name = "PictureAlert";
+            this.PictureAlert.Size = new System.Drawing.Size(65, 65);
+            this.PictureAlert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureAlert.TabIndex = 0;
+            this.PictureAlert.TabStop = false;
             // 
             // Toast
             // 
