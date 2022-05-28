@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddCart = new System.Windows.Forms.Button();
             this.Price = new System.Windows.Forms.Label();
             this.Qty = new System.Windows.Forms.Label();
             this.PName = new System.Windows.Forms.Label();
             this.image = new System.Windows.Forms.PictureBox();
-            this.AddCart = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
@@ -53,30 +53,47 @@
             this.panel1.Size = new System.Drawing.Size(108, 69);
             this.panel1.TabIndex = 1;
             // 
+            // AddCart
+            // 
+            this.AddCart.BackColor = System.Drawing.Color.YellowGreen;
+            this.AddCart.FlatAppearance.BorderSize = 0;
+            this.AddCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddCart.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCart.ForeColor = System.Drawing.Color.White;
+            this.AddCart.Location = new System.Drawing.Point(67, 43);
+            this.AddCart.Name = "AddCart";
+            this.AddCart.Size = new System.Drawing.Size(38, 23);
+            this.AddCart.TabIndex = 1;
+            this.AddCart.Text = "เพิ่ม";
+            this.AddCart.UseVisualStyleBackColor = false;
+            // 
             // Price
             // 
             this.Price.AutoSize = true;
+            this.Price.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price.Location = new System.Drawing.Point(3, 50);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(35, 13);
+            this.Price.Size = new System.Drawing.Size(38, 17);
             this.Price.TabIndex = 0;
             this.Price.Text = "label1";
             // 
             // Qty
             // 
             this.Qty.AutoSize = true;
+            this.Qty.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Qty.Location = new System.Drawing.Point(3, 31);
             this.Qty.Name = "Qty";
-            this.Qty.Size = new System.Drawing.Size(35, 13);
+            this.Qty.Size = new System.Drawing.Size(38, 17);
             this.Qty.TabIndex = 0;
             this.Qty.Text = "label1";
             // 
             // PName
             // 
             this.PName.AutoSize = true;
+            this.PName.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PName.Location = new System.Drawing.Point(3, 9);
             this.PName.Name = "PName";
-            this.PName.Size = new System.Drawing.Size(35, 13);
+            this.PName.Size = new System.Drawing.Size(38, 17);
             this.PName.TabIndex = 0;
             this.PName.Text = "label1";
             // 
@@ -90,19 +107,6 @@
             this.image.Size = new System.Drawing.Size(80, 69);
             this.image.TabIndex = 0;
             this.image.TabStop = false;
-            // 
-            // AddCart
-            // 
-            this.AddCart.BackColor = System.Drawing.Color.YellowGreen;
-            this.AddCart.FlatAppearance.BorderSize = 0;
-            this.AddCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddCart.ForeColor = System.Drawing.Color.White;
-            this.AddCart.Location = new System.Drawing.Point(67, 47);
-            this.AddCart.Name = "AddCart";
-            this.AddCart.Size = new System.Drawing.Size(38, 19);
-            this.AddCart.TabIndex = 1;
-            this.AddCart.Text = "เพิ่ม";
-            this.AddCart.UseVisualStyleBackColor = false;
             // 
             // ProductCard
             // 

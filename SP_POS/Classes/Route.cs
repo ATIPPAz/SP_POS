@@ -1,4 +1,5 @@
-﻿using SP_POS.Pages.MemberPage;
+﻿using SP_POS.Controls;
+using SP_POS.Pages.MemberPage;
 using SP_POS.Pages.PosPage;
 using SP_POS.Pages.PosPage.Payment_Method;
 using SP_POS.Pages.ProductPage;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace SP_POS.Classes
 {
@@ -158,11 +160,12 @@ namespace SP_POS.Classes
                 memberPage = null;
             }
         }
-        public static void OpenCashPage(Panel panel)
+        public static void OpenCashPage(Panel panel,int total, List<Body> order)
         {
             if (CashPaymentpage == null)
             {
-                CashPaymentpage = new CashPayment();    
+                CashPaymentpage = new CashPayment();
+                CashPaymentpage.getTotal(total, order);
                 CashPaymentpage.Dock = DockStyle.Fill;
                 panel.Controls.Add(CashPaymentpage);
             }

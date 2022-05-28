@@ -38,8 +38,8 @@
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.header1 = new SP_POS.Controls.Header();
             this.SelectAllBtn = new System.Windows.Forms.Button();
+            this.header1 = new SP_POS.Controls.Header();
             this.Product.SuspendLayout();
             this.order.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -149,7 +149,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.DarkGray;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Prompt", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -157,14 +157,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // header1
-            // 
-            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(400, 40);
-            this.header1.TabIndex = 1;
             // 
             // SelectAllBtn
             // 
@@ -177,6 +169,14 @@
             this.SelectAllBtn.Text = "SelectAll";
             this.SelectAllBtn.UseVisualStyleBackColor = false;
             this.SelectAllBtn.Click += new System.EventHandler(this.SelectAllBtn_Click);
+            // 
+            // header1
+            // 
+            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header1.Location = new System.Drawing.Point(0, 0);
+            this.header1.Name = "header1";
+            this.header1.Size = new System.Drawing.Size(400, 40);
+            this.header1.TabIndex = 1;
             // 
             // Pos
             // 

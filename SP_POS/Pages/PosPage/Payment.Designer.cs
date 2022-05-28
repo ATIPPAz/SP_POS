@@ -37,7 +37,7 @@
             this.BackBtn = new System.Windows.Forms.Button();
             this.Usertxt = new System.Windows.Forms.TextBox();
             this.Findbtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PaymentMethod = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,10 +48,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Totallbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.StatusLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
+            this.PaymentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +113,7 @@
             // PaymentPanel
             // 
             this.PaymentPanel.BackColor = System.Drawing.Color.White;
+            this.PaymentPanel.Controls.Add(this.StatusLbl);
             this.PaymentPanel.Location = new System.Drawing.Point(492, 107);
             this.PaymentPanel.Name = "PaymentPanel";
             this.PaymentPanel.Size = new System.Drawing.Size(692, 500);
@@ -131,85 +135,95 @@
             // 
             // Usertxt
             // 
-            this.Usertxt.Location = new System.Drawing.Point(138, 81);
+            this.Usertxt.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usertxt.Location = new System.Drawing.Point(166, 69);
             this.Usertxt.Name = "Usertxt";
-            this.Usertxt.Size = new System.Drawing.Size(229, 20);
+            this.Usertxt.Size = new System.Drawing.Size(178, 36);
             this.Usertxt.TabIndex = 2;
             // 
             // Findbtn
             // 
-            this.Findbtn.Location = new System.Drawing.Point(373, 78);
+            this.Findbtn.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Findbtn.Location = new System.Drawing.Point(362, 71);
             this.Findbtn.Name = "Findbtn";
-            this.Findbtn.Size = new System.Drawing.Size(75, 23);
+            this.Findbtn.Size = new System.Drawing.Size(86, 34);
             this.Findbtn.TabIndex = 3;
             this.Findbtn.Text = "ค้นหา";
             this.Findbtn.UseVisualStyleBackColor = true;
             this.Findbtn.Click += new System.EventHandler(this.Findbtn_Click);
             // 
-            // comboBox1
+            // PaymentMethod
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.PaymentMethod.Enabled = false;
+            this.PaymentMethod.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentMethod.FormattingEnabled = true;
+            this.PaymentMethod.Items.AddRange(new object[] {
             "เงินสด",
             "เครดิต",
             "โอนเงิน"});
-            this.comboBox1.Location = new System.Drawing.Point(492, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.PaymentMethod.Location = new System.Drawing.Point(685, 64);
+            this.PaymentMethod.Name = "PaymentMethod";
+            this.PaymentMethod.Size = new System.Drawing.Size(225, 37);
+            this.PaymentMethod.TabIndex = 4;
+            this.PaymentMethod.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Font = new System.Drawing.Font("Prompt", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(45, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "วันที่ : ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 27);
+            this.label2.Font = new System.Drawing.Font("Prompt", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(35, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "ผู้รับ:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 45);
+            this.label3.Font = new System.Drawing.Font("Prompt", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(41, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "ที่อยู่ :";
             // 
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Location = new System.Drawing.Point(46, 11);
+            this.DateLabel.Font = new System.Drawing.Font("Prompt", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLabel.Location = new System.Drawing.Point(46, 8);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(31, 13);
+            this.DateLabel.Size = new System.Drawing.Size(33, 19);
             this.DateLabel.TabIndex = 1;
             this.DateLabel.Text = "____";
             // 
             // Namelabel
             // 
             this.Namelabel.AutoSize = true;
-            this.Namelabel.Location = new System.Drawing.Point(46, 27);
+            this.Namelabel.Font = new System.Drawing.Font("Prompt", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Namelabel.Location = new System.Drawing.Point(46, 24);
             this.Namelabel.Name = "Namelabel";
-            this.Namelabel.Size = new System.Drawing.Size(31, 13);
+            this.Namelabel.Size = new System.Drawing.Size(33, 19);
             this.Namelabel.TabIndex = 1;
             this.Namelabel.Text = "____";
             // 
             // addresslabel
             // 
             this.addresslabel.AutoSize = true;
-            this.addresslabel.Location = new System.Drawing.Point(46, 45);
+            this.addresslabel.Font = new System.Drawing.Font("Prompt", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addresslabel.Location = new System.Drawing.Point(46, 44);
             this.addresslabel.Name = "addresslabel";
-            this.addresslabel.Size = new System.Drawing.Size(31, 13);
+            this.addresslabel.Size = new System.Drawing.Size(33, 19);
             this.addresslabel.TabIndex = 1;
             this.addresslabel.Text = "____";
             // 
@@ -241,18 +255,42 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 84);
+            this.label5.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(19, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.Size = new System.Drawing.Size(141, 29);
             this.label5.TabIndex = 5;
             this.label5.Text = "ข้อมูลเมมเบอร์ :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Prompt", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(496, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(183, 29);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "เลือกวิธีการชำระเงิน :";
+            // 
+            // StatusLbl
+            // 
+            this.StatusLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatusLbl.Font = new System.Drawing.Font("Prompt", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLbl.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.StatusLbl.Location = new System.Drawing.Point(0, 0);
+            this.StatusLbl.Name = "StatusLbl";
+            this.StatusLbl.Size = new System.Drawing.Size(692, 500);
+            this.StatusLbl.TabIndex = 0;
+            this.StatusLbl.Text = "กรุณาค้นหา member ก่อนเลือกวิธีการชำระเงิน";
+            this.StatusLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.PaymentMethod);
             this.Controls.Add(this.Findbtn);
             this.Controls.Add(this.Usertxt);
             this.Controls.Add(this.BackBtn);
@@ -266,6 +304,7 @@
             this.panel6.ResumeLayout(false);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
+            this.PaymentPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +321,7 @@
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.TextBox Usertxt;
         private System.Windows.Forms.Button Findbtn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox PaymentMethod;
         private System.Windows.Forms.Label addresslabel;
         private System.Windows.Forms.Label Namelabel;
         private System.Windows.Forms.Label DateLabel;
@@ -293,5 +332,7 @@
         private System.Windows.Forms.Label Totallbl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label StatusLbl;
     }
 }

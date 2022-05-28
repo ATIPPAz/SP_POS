@@ -45,6 +45,7 @@
             // 
             this.panel1.Controls.Add(this.ProdName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 30);
@@ -54,6 +55,7 @@
             // 
             this.ProdName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ProdName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProdName.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProdName.Location = new System.Drawing.Point(0, 0);
             this.ProdName.Name = "ProdName";
             this.ProdName.Size = new System.Drawing.Size(150, 30);
@@ -67,6 +69,7 @@
             this.panel2.Controls.Add(this.RemovePanel);
             this.panel2.Controls.Add(this.Qty);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(150, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 30);
@@ -75,6 +78,7 @@
             // AddPanel
             // 
             this.AddPanel.BackColor = System.Drawing.Color.Transparent;
+            this.AddPanel.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddPanel.Location = new System.Drawing.Point(114, 3);
             this.AddPanel.Name = "AddPanel";
             this.AddPanel.Size = new System.Drawing.Size(20, 20);
@@ -82,6 +86,7 @@
             // 
             // RemovePanel
             // 
+            this.RemovePanel.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemovePanel.Location = new System.Drawing.Point(6, 3);
             this.RemovePanel.Name = "RemovePanel";
             this.RemovePanel.Size = new System.Drawing.Size(20, 20);
@@ -91,6 +96,7 @@
             // 
             this.Qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Qty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Qty.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Qty.Location = new System.Drawing.Point(0, 0);
             this.Qty.Name = "Qty";
             this.Qty.Size = new System.Drawing.Size(150, 30);
@@ -102,6 +108,7 @@
             // 
             this.panel3.Controls.Add(this.Price);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(300, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(110, 30);
@@ -111,6 +118,7 @@
             // 
             this.Price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Price.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Price.Font = new System.Drawing.Font("Prompt", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price.Location = new System.Drawing.Point(0, 0);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(110, 30);

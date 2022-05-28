@@ -13,7 +13,7 @@ namespace SP_POS.Controls
 {
     public partial class Body : UserControl
     {
-        Product product = new Product();
+        public Product product = new Product();
         public Button AddBtn;
         public Button RemoveBtn;
         

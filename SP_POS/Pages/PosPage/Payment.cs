@@ -14,19 +14,19 @@ namespace SP_POS.Pages.PosPage
 {
     public partial class Payment : UserControl
     {
+        int total = 0;
         public Payment()
         {
             InitializeComponent();
-            GetHeader();
             DateLabel.Text =  DateTime.Today.ToString("dd-MM-yyyy");
         }
 
         private void GetHeader()
         {
-            Header header = new Header();
             
         }
-        public void GetData(List<Body> data,int Totalpay)
+        List<Body> orderlist;
+        public void GetData(List<Body> data, int Totalpay)
         {
             data.ForEach(x =>
             {
@@ -35,30 +35,36 @@ namespace SP_POS.Pages.PosPage
                 body.Dock = DockStyle.Top;
                 OrderPanel.Controls.Add(body);
             });
-            Totallbl.Text = Totalpay.ToString()+"  บาทถ้วน";    
+            Totallbl.Text = Totalpay.ToString()+"  บาทถ้วน";
+            total = Totalpay;
+            orderlist = data;
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
             Route.BackToPos(Route.index.DisplayPanel);
         }
-        string CID, CFname, CLastName, Caddress;
+        string CID = "", username = "", Caddress = "";
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex == 0)
+            if(PaymentMethod.SelectedIndex == 0)
             {
-            Route.OpenCashPage(PaymentPanel);
+            Route.OpenCashPage(PaymentPanel, total, orderlist);
+                Route.CashPaymentpage.GetCust(username,CID,Caddress);
+                StatusLbl.SendToBack();
 
             }
-            else if(comboBox1.SelectedIndex == 1)
+            else if(PaymentMethod.SelectedIndex == 1)
             {
             Route.OpenCreditPage(PaymentPanel);
+                StatusLbl.SendToBack();
 
 
             }
-            else if (comboBox1.SelectedIndex == 2)
+            else if (PaymentMethod.SelectedIndex == 2)
             {
             Route.OpenTransferPage(PaymentPanel);
+                StatusLbl.SendToBack();
 
             }
         }
@@ -73,12 +79,14 @@ namespace SP_POS.Pages.PosPage
                 foreach (DataRow item in cust.Rows)
                 {
                     CID = item["CustID"].ToString();
-                    CFname = item["CustFName"].ToString();
-                    CLastName = item["CustLName"].ToString();
                     Caddress = item["CustAddress"].ToString();
                     addresslabel.Text = item["CustAddress"].ToString();
                     Namelabel.Text = item["CustPrefix"].ToString() + " " + item["CustFName"].ToString() + " " + item["CustLName"].ToString();
+                    username = Namelabel.Text;
                 }
+                PaymentMethod.Enabled = true;
+                StatusLbl.Text = "สามารถเลือกวิธีการชำระได้";
+                StatusLbl.BringToFront();
             }
             else
             {
@@ -88,22 +96,27 @@ namespace SP_POS.Pages.PosPage
                     foreach (DataRow item in cust.Rows)
                     {
                         CID = item["CustID"].ToString();
-                        CFname = item["CustFName"].ToString();
-                        CLastName = item["CustLName"].ToString();
                         Caddress = item["CustAddress"].ToString();
                         addresslabel.Text = item["CustAddress"].ToString();
                         Namelabel.Text = item["CustPrefix"].ToString() + " " + item["CustFName"].ToString() + " " + item["CustLName"].ToString();
+                        username = Namelabel.Text;
                     }
+                    PaymentMethod.Enabled = true;
+                    StatusLbl.Text = "สามารถเลือกวิธีการชำระได้";
+                    StatusLbl.BringToFront();
+
                 }
                 else
                 {
                     Toast.Error("ไม่พบ user");
                     CID = "";
-                    CFname = "";
-                    CLastName = "";
+                    username = "";
                     Caddress = "";
                     addresslabel.Text = "";
                     Namelabel.Text = "";
+                    PaymentMethod.Enabled = false;
+                    StatusLbl.Text = "กรุณาค้นหา member ก่อนเลือกวิธีการชำระเงิน";
+                    StatusLbl.BringToFront();
                 }
             }
         }
