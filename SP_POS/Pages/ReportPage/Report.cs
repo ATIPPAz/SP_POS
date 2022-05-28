@@ -24,17 +24,33 @@ namespace SP_POS.Pages.ReportPage
             getTotalOrder();
         }
 
-        private void getTotalOrder()
+        private void getTotalOrder(string date = "")
         {
-            var data = sq.Select("SELECT [OrderID],[OrderDate],[CreateDate],[ProdID],[ProdQty],[ProdPrice],[ProdCost],[realPrice] FROM [dbo].[ReportTotalOrder]");
+            var data = new DataTable();
+            if (date == "")
+            {
+                data = sq.Select("SELECT [OrderID],[OrderDate],[CreateDate],[ProdID],[ProdQty],[ProdPrice],[ProdCost],[realPrice] FROM [dbo].[ReportTotalOrder]");
+            }
+            else
+            {
+                data = sq.Select($"SELECT [OrderID],[OrderDate],[CreateDate],[ProdID],[ProdQty],[ProdPrice],[ProdCost],[realPrice] FROM [dbo].[ReportTotalOrder] where CreateDate ='{date}' ");
+            }
             dgvAllorder.DataSource = data;
             orderTotal = data;
             calTotalorder();
         }
 
-        void getAllOrder()
+        void getAllOrder(string date = "")
         {
-            var data = sq.Select("SELECT  [OrderID],[CreateDate],[OrderDetailID],[ProdID],[ProdQty],[ProdPrice] FROM .[dbo].[ReportAllOrder]");
+            var data = new DataTable();
+            if (date == "")
+            {
+                 data = sq.Select("SELECT  [OrderID],[CreateDate],[OrderDetailID],[ProdID],[ProdQty],[ProdPrice] FROM .[dbo].[ReportAllOrder]");
+            }
+            else
+            {
+                data = sq.Select($"SELECT  [OrderID],[CreateDate],[OrderDetailID],[ProdID],[ProdQty],[ProdPrice] FROM .[dbo].[ReportAllOrder] where CreateDate ='{date}'");
+            }
             dgvTotalOrder.DataSource = data;
             OrderAll = data;
             calAllorder();
@@ -74,6 +90,12 @@ namespace SP_POS.Pages.ReportPage
         {
             Excel ex = new Excel();
             ex.Print(orderTotal);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            getAllOrder(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+            getTotalOrder(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
         }
     }
 }
