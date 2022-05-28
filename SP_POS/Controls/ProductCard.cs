@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SP_POS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,23 @@ namespace SP_POS.Controls
 {
     public partial class ProductCard : UserControl
     {
+        public Product productcardData = new Product();
         public ProductCard()
         {
             InitializeComponent();
         }
-        public void setcard(string img,string name,string qty,string cost)
+        public void setcard(string img,string name,string qty,string price,string id,string cost)
         {
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            pictureBox1.LoadAsync(img);
-            label1.Text = name;
-            label2.Text = qty;
-            label3.Text = cost;
+            image.LoadAsync(img);
+            image.SizeMode = PictureBoxSizeMode.Zoom;
+            Qty.Text = qty;
+            PName.Text = name;
+            Price.Text = cost;
+            productcardData.ProdCost = cost;
+            productcardData.ProdPrice= price;
+            productcardData.ProdName = name;
+            productcardData.ProdQty = qty;
+            productcardData.ProdID = id;
         }
     }
 }

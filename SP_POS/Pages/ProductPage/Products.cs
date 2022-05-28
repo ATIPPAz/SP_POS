@@ -120,7 +120,7 @@ namespace SP_POS.Pages.ProductPage
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("กรุณาตรวจสอบค่าที่กรอกเข้ามาอีกครั้ง", "ข้อมูลที่กรอกผิดรูปแบบ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Addtable();

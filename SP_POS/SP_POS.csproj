@@ -48,8 +48,21 @@
   <ItemGroup>
     <Compile Include="Classes\Excel.cs" />
     <Compile Include="Classes\Pdf.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\Sql.cs" />
+    <Compile Include="Controls\Body.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Body.Designer.cs">
+      <DependentUpon>Body.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Header.Designer.cs">
+      <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +107,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Body.resx">
+      <DependentUpon>Body.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Header.resx">
+      <DependentUpon>Header.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
