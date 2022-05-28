@@ -38,6 +38,7 @@
             this.DisplayPanel = new System.Windows.Forms.Panel();
             this.Exitbtn = new System.Windows.Forms.PictureBox();
             this.MinimunBtn = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             this.ManuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Exitbtn)).BeginInit();
@@ -47,6 +48,7 @@
             // HeaderPanel
             // 
             this.HeaderPanel.BackColor = System.Drawing.Color.White;
+            this.HeaderPanel.Controls.Add(this.button1);
             this.HeaderPanel.Controls.Add(this.Exitbtn);
             this.HeaderPanel.Controls.Add(this.MinimunBtn);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -185,6 +187,18 @@
             this.MinimunBtn.TabStop = false;
             this.MinimunBtn.Click += new System.EventHandler(this.MinimunBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(8, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PosIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +235,7 @@
         private System.Windows.Forms.Label ReportBtn;
         private System.Windows.Forms.Panel LinePanel;
         public System.Windows.Forms.Panel DisplayPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

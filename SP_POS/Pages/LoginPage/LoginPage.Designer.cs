@@ -92,6 +92,7 @@
             this.PanelLogin.Name = "PanelLogin";
             this.PanelLogin.Size = new System.Drawing.Size(390, 600);
             this.PanelLogin.TabIndex = 1;
+            this.PanelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelLogin_Paint);
             // 
             // PasswordLine
             // 
@@ -119,6 +120,7 @@
             this.checkShowPassword.TabIndex = 6;
             this.checkShowPassword.Text = "ShowPassword";
             this.checkShowPassword.UseVisualStyleBackColor = true;
+            this.checkShowPassword.CheckedChanged += new System.EventHandler(this.checkShowPassword_CheckedChanged);
             // 
             // label3
             // 
@@ -166,6 +168,7 @@
             this.buttonExit.TabIndex = 3;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonLogin
             // 
@@ -181,6 +184,7 @@
             this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // PasswordText
             // 

@@ -75,5 +75,11 @@ namespace SP_POS
         {
             PosBtn.BackColor = Color.FromArgb(220, 220, 220);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Toast.Success("Logout Success");
+            Route.CreateLoginPage(null);
+        }
     }
 }
