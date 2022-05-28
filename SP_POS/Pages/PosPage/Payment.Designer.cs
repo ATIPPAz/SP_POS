@@ -33,7 +33,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.OrderPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PaymentPanel = new System.Windows.Forms.Panel();
             this.BackBtn = new System.Windows.Forms.Button();
             this.Usertxt = new System.Windows.Forms.TextBox();
             this.Findbtn = new System.Windows.Forms.Button();
@@ -107,13 +107,13 @@
             this.OrderPanel.Size = new System.Drawing.Size(400, 314);
             this.OrderPanel.TabIndex = 0;
             // 
-            // panel2
+            // PaymentPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(492, 107);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(692, 500);
-            this.panel2.TabIndex = 0;
+            this.PaymentPanel.BackColor = System.Drawing.Color.White;
+            this.PaymentPanel.Location = new System.Drawing.Point(492, 107);
+            this.PaymentPanel.Name = "PaymentPanel";
+            this.PaymentPanel.Size = new System.Drawing.Size(692, 500);
+            this.PaymentPanel.TabIndex = 0;
             // 
             // BackBtn
             // 
@@ -149,10 +149,15 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "เงินสด",
+            "เครดิต",
+            "โอนเงิน"});
             this.comboBox1.Location = new System.Drawing.Point(492, 57);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(225, 21);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -251,7 +256,7 @@
             this.Controls.Add(this.Findbtn);
             this.Controls.Add(this.Usertxt);
             this.Controls.Add(this.BackBtn);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PaymentPanel);
             this.Controls.Add(this.panel1);
             this.Name = "Payment";
             this.Size = new System.Drawing.Size(1200, 620);
@@ -272,7 +277,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Panel OrderPanel;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PaymentPanel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.TextBox Usertxt;

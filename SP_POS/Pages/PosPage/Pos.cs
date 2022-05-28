@@ -131,7 +131,10 @@ namespace SP_POS.Pages.PosPage
             productCard.Clear();
             OrderPanel.Controls.Clear();
             Product.Controls.Clear();
-            getProduct(); setcardt();
+            Product.Controls.Add(SelectAllBtn);
+
+            getProduct(); 
+            setcardt();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -142,6 +145,69 @@ namespace SP_POS.Pages.PosPage
                 Route.PaymentPage.GetData(OrderlistDetail, Totalpay);
 
             }
+        }
+
+        private void SelectAllBtn_Click(object sender, EventArgs e)
+        {
+            productCard.ForEach(data => {
+                if (Convert.ToInt32(data.getProduct().ProdQty) > 0)
+                {
+                    int idx = OrderlistDetail.FindIndex(or => or.getProduct().ProdID == data.getProduct().ProdID);
+                    if (idx == -1)
+                    {
+                        Body body = new Body();
+                        body.setProduct(data.productcardData, 1);
+                        body.createBtn();
+                        body.Dock = DockStyle.Top;
+                        OrderlistDetail.Add(body);
+                        body.AddBtn.Click += new EventHandler((object s, EventArgs ex) =>
+                        {
+                            string oid = body.getProduct().ProdID;
+                            int OrID = OrderlistDetail.FindIndex(datas => datas.getProduct().ProdID == oid);
+                            int pID = productCard.FindIndex(datas => datas.getProduct().ProdID == oid);
+                            if (Convert.ToInt32(productCard[pID].productcardData.ProdQty) > 0)
+                            {
+                                OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) + 1).ToString());
+                                productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) - 1).ToString();
+                                data.setText();
+                                calTotal();
+                            }
+
+                        });
+                        body.RemoveBtn.Click += new EventHandler((object s, EventArgs ex) =>
+                        {
+                            string oid = body.getProduct().ProdID;
+                            int OrID = OrderlistDetail.FindIndex(datas => data.getProduct().ProdID == oid);
+                            int pID = productCard.FindIndex(datas => data.getProduct().ProdID == oid);
+                            if (Convert.ToInt32(OrderlistDetail[OrID].getProduct().ProdQty) > 1)
+                            {
+                                OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) - 1).ToString());
+                                productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) + 1).ToString();
+                                data.setText();
+                                calTotal();
+                            }
+                            else if (Convert.ToInt32(OrderlistDetail[OrID].getProduct().ProdQty) == 1)
+                            {
+                                OrderPanel.Controls.Remove(OrderlistDetail[OrID]);
+                                OrderlistDetail[OrID].Hide();
+                                OrderlistDetail[OrID].Dispose();
+                                OrderlistDetail.RemoveAt(OrID);
+                                productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) + 1).ToString();
+                                data.setText();
+                                calTotal();
+                            }
+
+                        });
+                        OrderPanel.Controls.Add(body);
+
+                        //productCard[productidx].setQty();
+                        data.productcardData.ProdQty = (Convert.ToInt32(data.productcardData.ProdQty) - 1).ToString();
+                        data.setText();
+                    }
+                    data.productcardData.ProdQty = (Convert.ToInt32(data.productcardData.ProdQty) - 1).ToString();
+                }
+            });
+            calTotal();
         }
     }
 }

@@ -36,9 +36,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.header1 = new SP_POS.Controls.Header();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.header1 = new SP_POS.Controls.Header();
+            this.SelectAllBtn = new System.Windows.Forms.Button();
+            this.Product.SuspendLayout();
             this.order.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -47,6 +49,7 @@
             // Product
             // 
             this.Product.AutoScroll = true;
+            this.Product.Controls.Add(this.SelectAllBtn);
             this.Product.Dock = System.Windows.Forms.DockStyle.Left;
             this.Product.Location = new System.Drawing.Point(0, 0);
             this.Product.Name = "Product";
@@ -133,14 +136,6 @@
             this.HeaderPanel.Size = new System.Drawing.Size(400, 42);
             this.HeaderPanel.TabIndex = 1;
             // 
-            // header1
-            // 
-            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(400, 40);
-            this.header1.TabIndex = 1;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -163,6 +158,26 @@
             this.label1.Text = "Order List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // header1
+            // 
+            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header1.Location = new System.Drawing.Point(0, 0);
+            this.header1.Name = "header1";
+            this.header1.Size = new System.Drawing.Size(400, 40);
+            this.header1.TabIndex = 1;
+            // 
+            // SelectAllBtn
+            // 
+            this.SelectAllBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.SelectAllBtn.ForeColor = System.Drawing.Color.White;
+            this.SelectAllBtn.Location = new System.Drawing.Point(706, 3);
+            this.SelectAllBtn.Name = "SelectAllBtn";
+            this.SelectAllBtn.Size = new System.Drawing.Size(88, 31);
+            this.SelectAllBtn.TabIndex = 0;
+            this.SelectAllBtn.Text = "SelectAll";
+            this.SelectAllBtn.UseVisualStyleBackColor = false;
+            this.SelectAllBtn.Click += new System.EventHandler(this.SelectAllBtn_Click);
+            // 
             // Pos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +186,7 @@
             this.Controls.Add(this.Product);
             this.Name = "Pos";
             this.Size = new System.Drawing.Size(1200, 620);
+            this.Product.ResumeLayout(false);
             this.order.ResumeLayout(false);
             this.order.PerformLayout();
             this.HeaderPanel.ResumeLayout(false);
@@ -192,5 +208,6 @@
         private Controls.Header header1;
         private System.Windows.Forms.Label Total;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button SelectAllBtn;
     }
 }

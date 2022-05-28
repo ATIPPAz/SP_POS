@@ -93,6 +93,24 @@
     <Compile Include="Pages\MemberPage\Member.Designer.cs">
       <DependentUpon>Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PosPage\Payment Method\CashPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\PosPage\Payment Method\CashPayment.Designer.cs">
+      <DependentUpon>CashPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PosPage\Payment Method\CreditPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\PosPage\Payment Method\CreditPayment.Designer.cs">
+      <DependentUpon>CreditPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PosPage\Payment Method\TransferPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\PosPage\Payment Method\TransferPayment.Designer.cs">
+      <DependentUpon>TransferPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PosPage\Payment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +157,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MemberPage\Member.resx">
       <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PosPage\Payment Method\CashPayment.resx">
+      <DependentUpon>CashPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PosPage\Payment Method\CreditPayment.resx">
+      <DependentUpon>CreditPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PosPage\Payment Method\TransferPayment.resx">
+      <DependentUpon>TransferPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PosPage\Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>

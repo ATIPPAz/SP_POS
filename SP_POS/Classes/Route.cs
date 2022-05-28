@@ -1,5 +1,6 @@
 ﻿using SP_POS.Pages.MemberPage;
 using SP_POS.Pages.PosPage;
+using SP_POS.Pages.PosPage.Payment_Method;
 using SP_POS.Pages.ProductPage;
 using SP_POS.Pages.ReportPage;
 using System;
@@ -19,6 +20,10 @@ namespace SP_POS.Classes
         public static Pos PosPage;
         public static Report ReportPage;
         public static Payment PaymentPage;
+        public static CashPayment CashPaymentpage;
+        public static CreditPayment CreditPaymentpage; 
+        public static TransferPayment Transferpaymentpage;
+       
         public static PosIndex StartUpPage()
         {
             if(index == null)
@@ -151,6 +156,63 @@ namespace SP_POS.Classes
             {
                 memberPage.Dispose();
                 memberPage = null;
+            }
+        }
+        public static void OpenCashPage(Panel panel)
+        {
+            if (CashPaymentpage == null)
+            {
+                CashPaymentpage = new CashPayment();    
+                CashPaymentpage.Dock = DockStyle.Fill;
+                panel.Controls.Add(CashPaymentpage);
+            }
+            if (CreditPaymentpage != null)
+            {
+                CreditPaymentpage.Dispose();
+                CreditPaymentpage = null;
+            }
+            if (Transferpaymentpage != null)
+            {
+                Transferpaymentpage.Dispose();
+                Transferpaymentpage = null;
+            }
+        }
+        public static void OpenCreditPage(Panel panel)
+        {
+            if (CreditPaymentpage == null)
+            {
+                CreditPaymentpage = new CreditPayment();
+                CreditPaymentpage.Dock = DockStyle.Fill;
+                panel.Controls.Add(CreditPaymentpage);
+            }
+            if (CashPaymentpage != null)
+            {
+                CashPaymentpage.Dispose();
+                CashPaymentpage = null;
+            }
+            if (Transferpaymentpage != null)
+            {
+                Transferpaymentpage.Dispose();
+                Transferpaymentpage = null;
+            }
+        }
+        public static void OpenTransferPage(Panel panel)
+        {
+            if (Transferpaymentpage == null)
+            {
+                Transferpaymentpage = new TransferPayment();
+                Transferpaymentpage.Dock = DockStyle.Fill;
+                panel.Controls.Add(Transferpaymentpage);
+            }
+            if(CashPaymentpage != null)
+            {
+                CashPaymentpage.Dispose();
+                CashPaymentpage = null;
+            }
+            if (CreditPaymentpage !=null)
+            {
+                CreditPaymentpage.Dispose();
+                CreditPaymentpage = null;
             }
         }
         public static void BackToPos(Panel panel)

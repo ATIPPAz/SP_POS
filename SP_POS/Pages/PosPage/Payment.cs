@@ -42,6 +42,27 @@ namespace SP_POS.Pages.PosPage
             Route.BackToPos(Route.index.DisplayPanel);
         }
         string CID, CFname, CLastName, Caddress;
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex == 0)
+            {
+            Route.OpenCashPage(PaymentPanel);
+
+            }
+            else if(comboBox1.SelectedIndex == 1)
+            {
+            Route.OpenCreditPage(PaymentPanel);
+
+
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+            Route.OpenTransferPage(PaymentPanel);
+
+            }
+        }
+
         private void Findbtn_Click(object sender, EventArgs e)
         {
             Sql select = new Sql();
