@@ -10,7 +10,7 @@ namespace SP_POS.Classes
 {
     public class Sql
     {
-        private string connection = @"Server=localhost\SQLSERVER;Database=ShopDB;User Id=user1;Password=mypass1;";
+        private string connection = @"Server=0.tcp.ap.ngrok.io\SQLSERVER,12256;Database=ShopDB;User Id=user1;Password=mypass1;";
         public DataTable Select(string cmd)
         {
             Console.WriteLine(cmd);

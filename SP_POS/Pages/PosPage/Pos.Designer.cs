@@ -30,15 +30,15 @@
         {
             this.Product = new System.Windows.Forms.Panel();
             this.order = new System.Windows.Forms.Panel();
+            this.Total = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.OrderPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.header1 = new SP_POS.Controls.Header();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Total = new System.Windows.Forms.Label();
-            this.header1 = new SP_POS.Controls.Header();
             this.order.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,6 +68,24 @@
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(400, 620);
             this.order.TabIndex = 1;
+            // 
+            // Total
+            // 
+            this.Total.AutoSize = true;
+            this.Total.Location = new System.Drawing.Point(316, 535);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(35, 13);
+            this.Total.TabIndex = 4;
+            this.Total.Text = "0 บาท";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(261, 535);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Total : ";
             // 
             // OrderPanel
             // 
@@ -115,6 +133,14 @@
             this.HeaderPanel.Size = new System.Drawing.Size(400, 42);
             this.HeaderPanel.TabIndex = 1;
             // 
+            // header1
+            // 
+            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header1.Location = new System.Drawing.Point(0, 0);
+            this.header1.Name = "header1";
+            this.header1.Size = new System.Drawing.Size(400, 40);
+            this.header1.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -136,32 +162,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(296, 535);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Total : ";
-            // 
-            // Total
-            // 
-            this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(342, 535);
-            this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(35, 13);
-            this.Total.TabIndex = 4;
-            this.Total.Text = "0 บาท";
-            // 
-            // header1
-            // 
-            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(400, 40);
-            this.header1.TabIndex = 1;
             // 
             // Pos
             // 
