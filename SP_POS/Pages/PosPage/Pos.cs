@@ -57,6 +57,7 @@ namespace SP_POS.Pages.PosPage
                                 OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) + 1).ToString());
                                 productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) - 1).ToString();
                                 productCard[productidx].setText();
+                                calTotal();
                             }
 
                         });
@@ -70,6 +71,17 @@ namespace SP_POS.Pages.PosPage
                                 OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) - 1).ToString());
                                 productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) + 1).ToString();
                                 productCard[productidx].setText();
+                                calTotal();
+                            }
+                            else if (Convert.ToInt32(OrderlistDetail[OrID].getProduct().ProdQty)  ==1)
+                            {
+                                OrderPanel.Controls.Remove(OrderlistDetail[OrID]);
+                                OrderlistDetail[OrID].Hide();
+                                OrderlistDetail[OrID].Dispose();
+                                OrderlistDetail.RemoveAt(OrID);
+                                productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) + 1).ToString();
+                                productCard[productidx].setText();
+                                calTotal();
                             }
 
                         });
@@ -79,6 +91,7 @@ namespace SP_POS.Pages.PosPage
                         //productCard[productidx].setQty();
                         productCard[productidx].productcardData.ProdQty = (Convert.ToInt32(productCard[productidx].productcardData.ProdQty) - 1).ToString();
                         productCard[productidx].setText();
+
                     }
                     else
                     {
@@ -90,7 +103,7 @@ namespace SP_POS.Pages.PosPage
                             productCard[productidx].setText();
                         }
                     }
-
+                    calTotal();
 
                 });
                 Product.Controls.Add(pc);
@@ -104,7 +117,9 @@ namespace SP_POS.Pages.PosPage
         }
         void calTotal()
         {
-           
+            int total = 0;
+            OrderlistDetail.ForEach(x => { total+= Convert.ToInt32(x.getProduct().ProdPrice) * Convert.ToInt32(x.getProduct().ProdQty); });
+            Total.Text = total.ToString()+" บาท";
         }
         private void ClearBtn_Click(object sender, EventArgs e)
         {
@@ -113,6 +128,11 @@ namespace SP_POS.Pages.PosPage
             OrderPanel.Controls.Clear();
             Product.Controls.Clear();
             getProduct(); setcardt();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

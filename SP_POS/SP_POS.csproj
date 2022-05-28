@@ -87,6 +87,12 @@
     <Compile Include="Pages\MemberPage\Member.Designer.cs">
       <DependentUpon>Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PosPage\Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\PosPage\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PosPage\Pos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MemberPage\Member.resx">
       <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PosPage\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PosPage\Pos.resx">
       <DependentUpon>Pos.cs</DependentUpon>

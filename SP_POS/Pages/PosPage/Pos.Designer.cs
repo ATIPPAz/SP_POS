@@ -34,11 +34,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.header1 = new SP_POS.Controls.Header();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Total = new System.Windows.Forms.Label();
+            this.header1 = new SP_POS.Controls.Header();
             this.order.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,6 +89,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Continue";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ClearBtn
             // 
@@ -113,14 +114,6 @@
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(400, 42);
             this.HeaderPanel.TabIndex = 1;
-            // 
-            // header1
-            // 
-            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.header1.Location = new System.Drawing.Point(0, 0);
-            this.header1.Name = "header1";
-            this.header1.Size = new System.Drawing.Size(400, 40);
-            this.header1.TabIndex = 1;
             // 
             // panel1
             // 
@@ -158,8 +151,17 @@
             this.Total.AutoSize = true;
             this.Total.Location = new System.Drawing.Point(342, 535);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(0, 13);
+            this.Total.Size = new System.Drawing.Size(35, 13);
             this.Total.TabIndex = 4;
+            this.Total.Text = "0 บาท";
+            // 
+            // header1
+            // 
+            this.header1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header1.Location = new System.Drawing.Point(0, 0);
+            this.header1.Name = "header1";
+            this.header1.Size = new System.Drawing.Size(400, 40);
+            this.header1.TabIndex = 1;
             // 
             // Pos
             // 
