@@ -17,6 +17,7 @@ namespace SP_POS.Pages.PosPage
         DataTable dt = new DataTable();
         List<Product> OrderCart = new List<Product>();
         List<Body> OrderlistDetail = new List<Body>();
+        List<ProductCard> productCard = new List<ProductCard>();
         public Pos()
         {
             InitializeComponent(); getProduct(); setcardt();
@@ -36,18 +37,31 @@ namespace SP_POS.Pages.PosPage
                 pc.Location = new Point(x, y);
                 pc.Size = new Size(200, 75);
                 pc.setcard(item["ProdImage"].ToString(), item["ProdName"].ToString(), item["ProdQty"].ToString(), item["ProdPrice"].ToString(), item["ProdID"].ToString(), item["ProdCost"].ToString()) ;
+                productCard.Add(pc);
                 pc.AddCart.Click += new EventHandler((object sender, EventArgs e) => {
-                    var find = OrderCart.Find(pd => pd.ProdID == pc.productcardData.ProdID);
-                    if (find == null)
+                    int idx = OrderCart.FindIndex(pd => pd.ProdID == pc.productcardData.ProdID);
+                    if (idx == -1)
                     {
+                        
                         OrderCart.Add(pc.productcardData);
                         var body =new Body();
-                        body.setProduct(pc.productcardData);
+                        body.setProduct(pc.productcardData,qty:1);
                         body.createBtn();
                         body.Dock = DockStyle.Top;
                         OrderPanel.Controls.Add(body);
                         OrderlistDetail.Add(body);
-                    };
+                        idx = OrderCart.FindIndex(pd => pd.ProdID == pc.productcardData.ProdID);
+                        pc.setQty((Convert.ToInt32(pc.getQty()) - 1).ToString());
+                        OrderCart[idx] = pc.getProduct();
+                    }
+                    else
+                    {
+                        OrderlistDetail[idx].setQty((Convert.ToInt32(OrderlistDetail[idx].getQty()) + 1).ToString());
+                        pc.setQty((Convert.ToInt32(pc.getQty()) - 1).ToString());
+                        OrderCart[idx] = pc.getProduct();
+                    }
+
+
                 });
                 Product.Controls.Add(pc);
                 x += 250;
@@ -57,6 +71,16 @@ namespace SP_POS.Pages.PosPage
                     y += 100;
                 }
             }
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            OrderCart.Clear();
+            OrderlistDetail.Clear();
+            productCard.Clear();
+            OrderPanel.Controls.Clear();
+            Product.Controls.Clear();
+            getProduct(); setcardt();
         }
     }
 }

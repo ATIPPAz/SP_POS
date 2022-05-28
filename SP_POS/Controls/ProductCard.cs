@@ -18,13 +18,26 @@ namespace SP_POS.Controls
         {
             InitializeComponent();
         }
+        public string getQty()
+        {
+            return productcardData.ProdQty;
+        }
+        public Product getProduct()
+        {
+            return productcardData;
+        }
+        public void setQty(string qty)
+        {
+            productcardData.ProdQty = qty;
+            Qty.Text = productcardData.ProdQty;
+        }
         public void setcard(string img,string name,string qty,string price,string id,string cost)
         {
             image.LoadAsync(img);
             image.SizeMode = PictureBoxSizeMode.Zoom;
             Qty.Text = qty;
             PName.Text = name;
-            Price.Text = cost;
+            Price.Text = price;
             productcardData.ProdCost = cost;
             productcardData.ProdPrice= price;
             productcardData.ProdName = name;

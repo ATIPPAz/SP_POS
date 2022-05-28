@@ -32,7 +32,7 @@
             this.order = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.OrderPanel = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.order.BackColor = System.Drawing.Color.White;
             this.order.Controls.Add(this.OrderPanel);
             this.order.Controls.Add(this.button1);
-            this.order.Controls.Add(this.button2);
+            this.order.Controls.Add(this.ClearBtn);
             this.order.Controls.Add(this.HeaderPanel);
             this.order.Controls.Add(this.panel1);
             this.order.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -84,18 +84,19 @@
             this.HeaderPanel.Size = new System.Drawing.Size(400, 42);
             this.HeaderPanel.TabIndex = 1;
             // 
-            // button2
+            // ClearBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.IndianRed;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(29, 572);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = false;
+            this.ClearBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBtn.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearBtn.ForeColor = System.Drawing.Color.White;
+            this.ClearBtn.Location = new System.Drawing.Point(29, 572);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(119, 36);
+            this.ClearBtn.TabIndex = 2;
+            this.ClearBtn.Text = "Clear";
+            this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // label1
             // 
@@ -158,7 +159,7 @@
 
         private System.Windows.Forms.Panel Product;
         private System.Windows.Forms.Panel order;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;

@@ -22,12 +22,22 @@ namespace SP_POS.Controls
             InitializeComponent();
             
         }
-        public void setProduct(Product pd)
+        public void setProduct(Product pd,int qty)
         {
             product = pd;
+            product.ProdQty = qty.ToString();
             ProdName.Text = product.ProdName;
             Price.Text = product.ProdPrice;
-            Qty.Text = product.ProdQty;
+            Qty.Text = (qty).ToString();
+        }
+        public void setQty(string qty)
+        {
+            Qty.Text = qty;
+            product.ProdQty = qty;
+        }
+        public string getQty()
+        {
+            return product.ProdQty;
         }
         public  void createBtn()
         {
