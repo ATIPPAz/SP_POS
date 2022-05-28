@@ -26,6 +26,18 @@ namespace SP_POS.Classes
             }
             return dt;
         }
+        public void Update(string cmd)
+        {
+            Console.WriteLine(cmd);
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                con.Open();
+                using (SqlCommand sqlcmd = new SqlCommand(cmd, con))
+                {
+                    sqlcmd.ExecuteNonQuery();
+                }
+            }
+        }
         public void Update(string cmd, string[] column, object[] columnvalue)
         {
             Console.WriteLine(cmd);

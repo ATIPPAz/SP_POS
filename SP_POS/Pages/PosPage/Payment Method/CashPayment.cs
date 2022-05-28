@@ -61,7 +61,6 @@ namespace SP_POS.Pages.PosPage.Payment_Method
             {
                 Toast.Error("กรุณากรอกจำนวนเงินให้ถูกต้อง");
                 invoke.Enabled = false;
-
                 moneytxt.Clear();
                 moneytxt.Focus();
             }
@@ -69,20 +68,29 @@ namespace SP_POS.Pages.PosPage.Payment_Method
 
         private void invoke_Click(object sender, EventArgs e)
         {
-            invoke invoke = new invoke();
-            DataTable data = new DataTable();
-            List<Product> products = new List<Product>();
-            order.ForEach(x => products.Add(x.product));
-            ConvertToDataTable ct = new ConvertToDataTable();
-            data = ct.ToDataTable(products);
-            data.Columns.Remove("ProdDetailID");
-            data.Columns.Remove("ProdCost");
-            data.Columns.Remove("ProdBrand");
-            data.Columns.Remove("ProdStatus");
-            data.Columns.Remove("ProdType");
-            data.Columns.Remove("ProdDest");
-            data.Columns.Remove("ProdImage");
-            invoke.print(data,"Bill Recipt",username,add,total,rec,change);
+            try
+            {
+                invoke invoke = new invoke();
+                DataTable data = new DataTable();
+                List<Product> products = new List<Product>();
+                order.ForEach(x => products.Add(x.product));
+                ConvertToDataTable ct = new ConvertToDataTable();
+                data = ct.ToDataTable(products);
+                data.Columns.Remove("ProdDetailID");
+                data.Columns.Remove("ProdCost");
+                data.Columns.Remove("ProdBrand");
+                data.Columns.Remove("ProdStatus");
+                data.Columns.Remove("ProdType");
+                data.Columns.Remove("ProdDest");
+                data.Columns.Remove("ProdImage");
+                invoke.print(data, "Bill Recipt", username, add, total, rec, change, "cashier");
+                //create order
+            }
+            catch (Exception)
+            {
+                Toast.Error("เกิดข้อผิดพลาด");
+            }
+            
         }
     }
 }

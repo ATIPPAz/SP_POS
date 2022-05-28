@@ -13,7 +13,7 @@ namespace SP_POS.Classes
 {
     public class invoke
     {
-        public void print(DataTable data, string Header,string username ,string address,int total,string rec,string change)
+        public void print(DataTable data, string Header,string username ,string address,int total,string rec,string change,string method)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF|*.pdf" })
             {
@@ -21,13 +21,13 @@ namespace SP_POS.Classes
                 /*  string path = @"test.pdf";*/
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    ExportDataTableToPdf(data, sfd.FileName, Header,username, address,total, rec, change);
+                    ExportDataTableToPdf(data, sfd.FileName, Header,username, address,total, rec, change, method);
                     System.Diagnostics.Process.Start(sfd.FileName);
                 }
 
             }
         }
-        private void ExportDataTableToPdf(DataTable dtblTable, string strPdfPath, string strHeader, string username,string address, int total, string rec, string change)
+        private void ExportDataTableToPdf(DataTable dtblTable, string strPdfPath, string strHeader, string username,string address, int total, string rec, string change, string method)
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
@@ -49,6 +49,7 @@ namespace SP_POS.Classes
             iTextSharp.text.Font fntAuthor = new iTextSharp.text.Font(btnAuthor, 8, 2, BaseColor.GRAY);
             prgAuthor.Alignment = Element.ALIGN_RIGHT;
             prgAuthor.Add(new Chunk($"Pay by name : {username}", fntAuthor));
+            prgAuthor.Add(new Chunk($"Pay by      : {method} method ", fntAuthor));
             prgAuthor.Add(new Chunk("\nAt Date : " + DateTime.Now.ToShortDateString(), fntAuthor));
             prgAuthor.Add(new Chunk($"\nAddress {address} : " + DateTime.Now.ToShortDateString(), fntAuthor));
             document.Add(prgAuthor);

@@ -57,6 +57,7 @@ namespace SP_POS.Pages.PosPage
             else if(PaymentMethod.SelectedIndex == 1)
             {
             Route.OpenCreditPage(PaymentPanel);
+                Route.CreditPaymentpage.getdata(orderlist, total,username, CID, Caddress);
                 StatusLbl.SendToBack();
 
 
