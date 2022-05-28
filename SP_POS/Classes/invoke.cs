@@ -48,8 +48,8 @@ namespace SP_POS.Classes
             BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             iTextSharp.text.Font fntAuthor = new iTextSharp.text.Font(btnAuthor, 8, 2, BaseColor.GRAY);
             prgAuthor.Alignment = Element.ALIGN_RIGHT;
-            prgAuthor.Add(new Chunk($"Pay by name : {username}", fntAuthor));
-            prgAuthor.Add(new Chunk($"Pay by      : {method} method ", fntAuthor));
+            prgAuthor.Add(new Chunk($"\nPay by name : {username}", fntAuthor));
+            prgAuthor.Add(new Chunk($"\nPay by      : {method} method ", fntAuthor));
             prgAuthor.Add(new Chunk("\nAt Date : " + DateTime.Now.ToShortDateString(), fntAuthor));
             prgAuthor.Add(new Chunk($"\nAddress {address} : " + DateTime.Now.ToShortDateString(), fntAuthor));
             document.Add(prgAuthor);

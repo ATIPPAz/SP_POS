@@ -65,6 +65,7 @@ namespace SP_POS.Pages.PosPage
             else if (PaymentMethod.SelectedIndex == 2)
             {
             Route.OpenTransferPage(PaymentPanel);
+                Route.Transferpaymentpage.getdata(orderlist, total, username, CID, Caddress);
                 StatusLbl.SendToBack();
 
             }
