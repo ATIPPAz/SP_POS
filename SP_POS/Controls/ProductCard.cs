@@ -28,20 +28,23 @@ namespace SP_POS.Controls
         }
         public void setQty(string qty)
         {
+            Console.WriteLine(qty);
             productcardData.ProdQty = qty;
-            Qty.Text = productcardData.ProdQty;
         }
+            
+        public void setText() { Qty.Text = productcardData.ProdQty; }
         public void setcard(string img,string name,string qty,string price,string id,string cost)
         {
+            
             image.LoadAsync(img);
             image.SizeMode = PictureBoxSizeMode.Zoom;
+            productcardData.ProdQty = qty;
             Qty.Text = qty;
             PName.Text = name;
             Price.Text = price;
             productcardData.ProdCost = cost;
             productcardData.ProdPrice= price;
             productcardData.ProdName = name;
-            productcardData.ProdQty = qty;
             productcardData.ProdID = id;
         }
     }

@@ -15,7 +15,6 @@ namespace SP_POS.Pages.PosPage
     public partial class Pos : UserControl
     {
         DataTable dt = new DataTable();
-        List<Product> OrderCart = new List<Product>();
         List<Body> OrderlistDetail = new List<Body>();
         List<ProductCard> productCard = new List<ProductCard>();
         public Pos()
@@ -38,27 +37,58 @@ namespace SP_POS.Pages.PosPage
                 pc.Size = new Size(200, 75);
                 pc.setcard(item["ProdImage"].ToString(), item["ProdName"].ToString(), item["ProdQty"].ToString(), item["ProdPrice"].ToString(), item["ProdID"].ToString(), item["ProdCost"].ToString()) ;
                 productCard.Add(pc);
+
                 pc.AddCart.Click += new EventHandler((object sender, EventArgs e) => {
-                    int idx = OrderCart.FindIndex(pd => pd.ProdID == pc.productcardData.ProdID);
-                    if (idx == -1)
+                    int Orderidx = OrderlistDetail.FindIndex(data => data.getProduct().ProdID == pc.productcardData.ProdID);
+                    int productidx = productCard.FindIndex(data => data.getProduct().ProdID == pc.productcardData.ProdID);
+                    if (Orderidx == -1)
                     {
-                        
-                        OrderCart.Add(pc.productcardData);
                         var body =new Body();
-                        body.setProduct(pc.productcardData,qty:1);
+                        body.setProduct(pc.productcardData,1);
                         body.createBtn();
                         body.Dock = DockStyle.Top;
+                        body.AddBtn.Click += new EventHandler((object s, EventArgs ex) =>
+                        {
+                            string oid = body.getProduct().ProdID;
+                            int OrID = OrderlistDetail.FindIndex(data => data.getProduct().ProdID == oid);
+                            int pID = productCard.FindIndex(data => data.getProduct().ProdID == oid);
+                            if(Convert.ToInt32(productCard[pID].productcardData.ProdQty) > 0)
+                            {
+                                OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) + 1).ToString());
+                                productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) - 1).ToString();
+                                productCard[productidx].setText();
+                            }
+
+                        });
+                        body.RemoveBtn.Click += new EventHandler((object s, EventArgs ex) =>
+                        {
+                            string oid = body.getProduct().ProdID;
+                            int OrID = OrderlistDetail.FindIndex(data => data.getProduct().ProdID == oid);
+                            int pID = productCard.FindIndex(data => data.getProduct().ProdID == oid);
+                            if (Convert.ToInt32(OrderlistDetail[OrID].getProduct().ProdQty) > 1)
+                            {
+                                OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) - 1).ToString());
+                                productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) + 1).ToString();
+                                productCard[productidx].setText();
+                            }
+
+                        });
                         OrderPanel.Controls.Add(body);
                         OrderlistDetail.Add(body);
-                        idx = OrderCart.FindIndex(pd => pd.ProdID == pc.productcardData.ProdID);
-                        pc.setQty((Convert.ToInt32(pc.getQty()) - 1).ToString());
-                        OrderCart[idx] = pc.getProduct();
+                       
+                        //productCard[productidx].setQty();
+                        productCard[productidx].productcardData.ProdQty = (Convert.ToInt32(productCard[productidx].productcardData.ProdQty) - 1).ToString();
+                        productCard[productidx].setText();
                     }
                     else
                     {
-                        OrderlistDetail[idx].setQty((Convert.ToInt32(OrderlistDetail[idx].getQty()) + 1).ToString());
-                        pc.setQty((Convert.ToInt32(pc.getQty()) - 1).ToString());
-                        OrderCart[idx] = pc.getProduct();
+                       
+                        if (Convert.ToInt32(productCard[productidx].productcardData.ProdQty) >0)
+                        {
+                            OrderlistDetail[Orderidx].setQty((Convert.ToInt32(OrderlistDetail[Orderidx].getQty()) + 1).ToString());
+                            productCard[productidx].productcardData.ProdQty = (Convert.ToInt32(productCard[productidx].productcardData.ProdQty) - 1).ToString();
+                            productCard[productidx].setText();
+                        }
                     }
 
 
@@ -72,10 +102,12 @@ namespace SP_POS.Pages.PosPage
                 }
             }
         }
-
+        void calTotal()
+        {
+           
+        }
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            OrderCart.Clear();
             OrderlistDetail.Clear();
             productCard.Clear();
             OrderPanel.Controls.Clear();

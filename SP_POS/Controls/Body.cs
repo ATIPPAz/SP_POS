@@ -14,7 +14,7 @@ namespace SP_POS.Controls
     public partial class Body : UserControl
     {
         Product product = new Product();
-        public Button AddBtns;
+        public Button AddBtn;
         public Button RemoveBtn;
         
         public Body()
@@ -22,13 +22,32 @@ namespace SP_POS.Controls
             InitializeComponent();
             
         }
+        public Product getProduct()
+        {
+          return product;
+        }
+        public void setText() { Qty.Text = product.ProdQty; }
+
         public void setProduct(Product pd,int qty)
         {
-            product = pd;
+            product.ProdID = pd.ProdID.ToString();
+            product.ProdPrice = pd.ProdPrice.ToString();
+            product.ProdQty = pd.ProdQty.ToString();
+            product.ProdName = pd.ProdName.ToString();
             product.ProdQty = qty.ToString();
             ProdName.Text = product.ProdName;
             Price.Text = product.ProdPrice;
-            Qty.Text = (qty).ToString();
+            Qty.Text = product.ProdQty;
+        }
+        public void setProduct(Product pd)
+        {
+            product.ProdID = pd.ProdID.ToString();
+            product.ProdPrice = pd.ProdPrice.ToString();
+            product.ProdQty = pd.ProdQty.ToString();
+            product.ProdName = pd.ProdName.ToString();
+            ProdName.Text = product.ProdName;
+            Price.Text = product.ProdPrice;
+            Qty.Text = product.ProdQty;
         }
         public void setQty(string qty)
         {
@@ -41,7 +60,7 @@ namespace SP_POS.Controls
         }
         public  void createBtn()
         {
-            AddBtns = new Button();
+            AddBtn = new Button();
             RemoveBtn = new Button();
             RemoveBtn.BackColor = System.Drawing.Color.Firebrick;
             RemoveBtn.FlatAppearance.BorderSize = 0;
@@ -60,19 +79,19 @@ namespace SP_POS.Controls
             // 
             // AddBtns
             // 
-            AddBtns.BackColor = System.Drawing.Color.YellowGreen;
-            AddBtns.FlatAppearance.BorderSize = 0;
-           AddBtns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-           AddBtns.ForeColor = System.Drawing.Color.White;
+            AddBtn.BackColor = System.Drawing.Color.YellowGreen;
+            AddBtn.FlatAppearance.BorderSize = 0;
+           AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+           AddBtn.ForeColor = System.Drawing.Color.White;
            
-           AddBtns.Name = "AddBtns";
-           AddBtns.Size = new System.Drawing.Size(20, 20);
-           AddBtns.TabIndex = 1;
-           AddBtns.Text = "+";
-           AddBtns.UseVisualStyleBackColor = false;
-            AddBtns.BringToFront();
-            AddBtns.Dock = System.Windows.Forms.DockStyle.Fill;
-            AddPanel.Controls.Add(AddBtns);
+           AddBtn.Name = "AddBtns";
+           AddBtn.Size = new System.Drawing.Size(20, 20);
+           AddBtn.TabIndex = 1;
+           AddBtn.Text = "+";
+           AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.BringToFront();
+            AddBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            AddPanel.Controls.Add(AddBtn);
         }
     }
 }
