@@ -43,8 +43,10 @@ namespace SP_POS.Pages.PosPage
                     int productidx = productCard.FindIndex(data => data.getProduct().ProdID == pc.productcardData.ProdID);
                     if (Orderidx == -1)
                     {
-                        var body =new Body();
-                        body.setProduct(pc.productcardData,1);
+                        if (Convert.ToInt32(productCard[productidx].getProduct().ProdQty) > 0)
+                        {
+                        var body = new Body();
+                        body.setProduct(pc.productcardData, 1);
                         body.createBtn();
                         body.Dock = DockStyle.Top;
                         body.AddBtn.Click += new EventHandler((object s, EventArgs ex) =>
@@ -52,7 +54,7 @@ namespace SP_POS.Pages.PosPage
                             string oid = body.getProduct().ProdID;
                             int OrID = OrderlistDetail.FindIndex(data => data.getProduct().ProdID == oid);
                             int pID = productCard.FindIndex(data => data.getProduct().ProdID == oid);
-                            if(Convert.ToInt32(productCard[pID].productcardData.ProdQty) > 0)
+                            if (Convert.ToInt32(productCard[pID].productcardData.ProdQty) > 0)
                             {
                                 OrderlistDetail[OrID].setQty((Convert.ToInt32(OrderlistDetail[OrID].getQty()) + 1).ToString());
                                 productCard[pID].productcardData.ProdQty = (Convert.ToInt32(productCard[pID].productcardData.ProdQty) - 1).ToString();
@@ -73,7 +75,7 @@ namespace SP_POS.Pages.PosPage
                                 productCard[productidx].setText();
                                 calTotal();
                             }
-                            else if (Convert.ToInt32(OrderlistDetail[OrID].getProduct().ProdQty)  ==1)
+                            else if (Convert.ToInt32(OrderlistDetail[OrID].getProduct().ProdQty) == 1)
                             {
                                 OrderPanel.Controls.Remove(OrderlistDetail[OrID]);
                                 OrderlistDetail[OrID].Hide();
@@ -87,11 +89,11 @@ namespace SP_POS.Pages.PosPage
                         });
                         OrderPanel.Controls.Add(body);
                         OrderlistDetail.Add(body);
-                       
+
                         //productCard[productidx].setQty();
                         productCard[productidx].productcardData.ProdQty = (Convert.ToInt32(productCard[productidx].productcardData.ProdQty) - 1).ToString();
                         productCard[productidx].setText();
-
+                    }
                     }
                     else
                     {
