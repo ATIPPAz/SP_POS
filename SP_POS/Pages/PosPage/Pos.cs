@@ -132,7 +132,10 @@ namespace SP_POS.Pages.PosPage
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (OrderlistDetail.Count != 0)
+            {
+                Route.OpenPayment(Route.index.DisplayPanel);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SP_POS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace SP_POS.Pages.PosPage
         public Payment()
         {
             InitializeComponent();
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            Route.BackToPos(Route.index.DisplayPanel);
         }
     }
 }

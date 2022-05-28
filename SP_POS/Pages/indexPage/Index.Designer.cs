@@ -220,7 +220,7 @@
         private System.Windows.Forms.Label ProductBtn;
         private System.Windows.Forms.Label ReportBtn;
         private System.Windows.Forms.Panel LinePanel;
-        private System.Windows.Forms.Panel DisplayPanel;
+        public System.Windows.Forms.Panel DisplayPanel;
     }
 }
 

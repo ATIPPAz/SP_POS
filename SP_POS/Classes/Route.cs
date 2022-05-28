@@ -13,12 +13,21 @@ namespace SP_POS.Classes
 {
     public static class Route
     {
+        public static PosIndex index;
         public static Products productPage;
         public static Member memberPage;
         public static Pos PosPage;
         public static Report ReportPage;
-
-
+        public static Payment PaymentPage;
+        public static PosIndex StartUpPage()
+        {
+            if(index == null)
+            {
+                index = new PosIndex();
+                index.Show();
+            }
+            return index;
+        }
         public static void OpenProductPage(Panel panel)
         {
             if(productPage == null)
@@ -119,6 +128,53 @@ namespace SP_POS.Classes
             {
                 PosPage.Dispose();
                 PosPage = null;
+            }
+        }
+        public static void OpenPayment(Panel panel)
+        {
+            PaymentPage = new Payment();
+            PaymentPage.Dock = DockStyle.Fill;
+            panel.Controls.Add(PaymentPage);
+            PaymentPage.BringToFront();
+            PosPage.SendToBack();
+            if (productPage != null)
+            {
+                productPage.Dispose();
+                productPage = null;
+            }
+            if (ReportPage != null)
+            {
+                ReportPage.Dispose();
+                ReportPage = null;
+            }
+            if (memberPage != null)
+            {
+                memberPage.Dispose();
+                memberPage = null;
+            }
+        }
+        public static void BackToPos(Panel panel)
+        {
+            PosPage.BringToFront();
+            if(PaymentPage  != null)
+            {
+                PaymentPage.Dispose();
+                productPage = null;
+            }
+            if (productPage != null)
+            {
+                productPage.Dispose();
+                productPage = null;
+            }
+            if (ReportPage != null)
+            {
+                ReportPage.Dispose();
+                ReportPage = null;
+            }
+            if (memberPage != null)
+            {
+                memberPage.Dispose();
+                memberPage = null;
             }
         }
     }

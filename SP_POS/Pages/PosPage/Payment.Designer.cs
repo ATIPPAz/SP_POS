@@ -102,6 +102,7 @@
             this.BackBtn.TabIndex = 1;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // Payment
             // 

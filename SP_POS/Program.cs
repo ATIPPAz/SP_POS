@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SP_POS.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SP_POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PosIndex());
+            Application.Run(Route.StartUpPage());
         }
     }
 }
