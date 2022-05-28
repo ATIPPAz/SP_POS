@@ -69,6 +69,12 @@
     <Compile Include="Controls\ProductCard.Designer.cs">
       <DependentUpon>ProductCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Toast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Toast.Designer.cs">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\indexPage\Index.cs">
       <SubType>Form</SubType>
     </Compile>
