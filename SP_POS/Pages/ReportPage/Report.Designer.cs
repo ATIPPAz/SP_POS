@@ -40,20 +40,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Alllorderlbl = new System.Windows.Forms.Label();
             this.TotalOrderlbl = new System.Windows.Forms.Label();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProdID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProdQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProdPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreateDate2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdQty2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdPrice2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdCost2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.realPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTotalOrder)).BeginInit();
             this.SuspendLayout();
@@ -77,14 +76,13 @@
             // 
             this.dgvTotalOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTotalOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14});
+            this.OrderID2,
+            this.CreateDate2,
+            this.ProdID2,
+            this.ProdQty2,
+            this.ProdPrice2,
+            this.ProdCost2,
+            this.realPrice});
             this.dgvTotalOrder.Location = new System.Drawing.Point(569, 126);
             this.dgvTotalOrder.Name = "dgvTotalOrder";
             this.dgvTotalOrder.Size = new System.Drawing.Size(600, 456);
@@ -182,46 +180,6 @@
             this.TotalOrderlbl.TabIndex = 3;
             this.TotalOrderlbl.Text = "100";
             // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Column11";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Column12";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Column13";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Column14";
-            this.Column14.Name = "Column14";
-            // 
             // OrderID
             // 
             this.OrderID.DataPropertyName = "OrderID";
@@ -257,6 +215,48 @@
             this.ProdPrice.DataPropertyName = "ProdPrice";
             this.ProdPrice.HeaderText = "ProdPrice";
             this.ProdPrice.Name = "ProdPrice";
+            // 
+            // OrderID2
+            // 
+            this.OrderID2.DataPropertyName = "OrderID";
+            this.OrderID2.HeaderText = "OrderID";
+            this.OrderID2.Name = "OrderID2";
+            // 
+            // CreateDate2
+            // 
+            this.CreateDate2.DataPropertyName = "CreateDate";
+            this.CreateDate2.HeaderText = "CreateDate";
+            this.CreateDate2.Name = "CreateDate2";
+            // 
+            // ProdID2
+            // 
+            this.ProdID2.DataPropertyName = "ProdID";
+            this.ProdID2.HeaderText = "ProdID";
+            this.ProdID2.Name = "ProdID2";
+            // 
+            // ProdQty2
+            // 
+            this.ProdQty2.DataPropertyName = "ProdQty";
+            this.ProdQty2.HeaderText = "ProdQty";
+            this.ProdQty2.Name = "ProdQty2";
+            // 
+            // ProdPrice2
+            // 
+            this.ProdPrice2.DataPropertyName = "ProdPrice";
+            this.ProdPrice2.HeaderText = "ProdPrice";
+            this.ProdPrice2.Name = "ProdPrice2";
+            // 
+            // ProdCost2
+            // 
+            this.ProdCost2.DataPropertyName = "ProdCost";
+            this.ProdCost2.HeaderText = "ProdCost";
+            this.ProdCost2.Name = "ProdCost2";
+            // 
+            // realPrice
+            // 
+            this.realPrice.DataPropertyName = "realPrice";
+            this.realPrice.HeaderText = "realPrice";
+            this.realPrice.Name = "realPrice";
             // 
             // Report
             // 
@@ -303,13 +303,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreateDate2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdID2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdQty2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdPrice2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdCost2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn realPrice;
     }
 }

@@ -15,15 +15,27 @@ namespace SP_POS.Pages.ReportPage
     {
         Sql sq = new Sql();
         DataTable OrderAll = new DataTable();
+        DataTable orderTotal = new DataTable();
+
         public Report()
         {
             InitializeComponent();
             getAllOrder();
+            getTotalOrder();
         }
+
+        private void getTotalOrder()
+        {
+            var data = sq.Select("SELECT [OrderID],[OrderDate],[CreateDate],[ProdID],[ProdQty],[ProdPrice],[ProdCost],[realPrice] FROM [dbo].[ReportTotalOrder]");
+            dgvAllorder.DataSource = data;
+            orderTotal = data;
+            calTotalorder();
+        }
+
         void getAllOrder()
         {
             var data = sq.Select("SELECT  [OrderID],[CreateDate],[OrderDetailID],[ProdID],[ProdQty],[ProdPrice] FROM .[dbo].[ReportAllOrder]");
-            dgvAllorder.DataSource = data;
+            dgvTotalOrder.DataSource = data;
             OrderAll = data;
             calAllorder();
         }
@@ -39,6 +51,17 @@ namespace SP_POS.Pages.ReportPage
             }
             Alllorderlbl.Text = total.ToString();
         }
-
+        void calTotalorder()
+        {
+            int total = 0;
+            foreach (DataRow item in orderTotal.Rows)
+            {
+                if (item["ProdQty"] != DBNull.Value && item["realPrice"] != DBNull.Value)
+                {
+                    total += (Convert.ToInt32(item["ProdQty"].ToString()) * Convert.ToInt32(item["realPrice"].ToString()));
+                }
+            }
+            TotalOrderlbl.Text = total.ToString();
+        }
     }
 }
