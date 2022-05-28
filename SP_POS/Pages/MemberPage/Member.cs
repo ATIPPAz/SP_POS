@@ -114,6 +114,11 @@ namespace SP_POS.Pages.MemberPage
 
             }
         }
+
+        private void SearchBartxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     class comboboxvalue
     {

@@ -63,5 +63,17 @@ namespace SP_POS.Pages.ReportPage
             }
             TotalOrderlbl.Text = total.ToString();
         }
+
+        private void Allorder_Click(object sender, EventArgs e)
+        {
+            Excel ex = new Excel();
+            ex.Print(OrderAll);
+        }
+
+        private void TotalOrder_Click(object sender, EventArgs e)
+        {
+            Excel ex = new Excel();
+            ex.Print(orderTotal);
+        }
     }
 }

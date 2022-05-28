@@ -116,6 +116,7 @@
             this.Allorder.TabIndex = 2;
             this.Allorder.Text = "download";
             this.Allorder.UseVisualStyleBackColor = true;
+            this.Allorder.Click += new System.EventHandler(this.Allorder_Click);
             // 
             // TotalOrder
             // 
@@ -125,6 +126,7 @@
             this.TotalOrder.TabIndex = 2;
             this.TotalOrder.Text = "download";
             this.TotalOrder.UseVisualStyleBackColor = true;
+            this.TotalOrder.Click += new System.EventHandler(this.TotalOrder_Click);
             // 
             // label3
             // 

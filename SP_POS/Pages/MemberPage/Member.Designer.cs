@@ -291,6 +291,7 @@
             this.SearchBartxt.Name = "SearchBartxt";
             this.SearchBartxt.Size = new System.Drawing.Size(1069, 35);
             this.SearchBartxt.TabIndex = 1;
+            this.SearchBartxt.TextChanged += new System.EventHandler(this.SearchBartxt_TextChanged);
             this.SearchBartxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBartxt_KeyPress);
             // 
             // dgvMember
